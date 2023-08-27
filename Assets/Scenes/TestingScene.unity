@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 9583700}
   - component: {fileID: 9583699}
   - component: {fileID: 9583698}
+  - component: {fileID: 9583703}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -244,6 +245,19 @@ Transform:
   - {fileID: 1884495261}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9583703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9583697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfa31280331af9478c2891dbb903d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 10
 --- !u!1 &34988743
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,13 +723,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786718590}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20500855, y: 0, z: 0, w: 0.9787602}
-  m_LocalPosition: {x: 0, y: 3.15, z: -5.38}
+  m_LocalRotation: {x: 0.37953687, y: 0, z: 0, w: 0.9251767}
+  m_LocalPosition: {x: 0, y: 9.69, z: -16.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 23.66, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 44.61, y: 0, z: 0}
 --- !u!114 &786718594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,6 +876,7 @@ GameObject:
   - component: {fileID: 1828619873}
   - component: {fileID: 1828619872}
   - component: {fileID: 1828619871}
+  - component: {fileID: 1828619876}
   m_Layer: 0
   m_Name: Animal
   m_TagString: Untagged
@@ -970,6 +985,19 @@ Transform:
   - {fileID: 1865384437}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1828619876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828619870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfa31280331af9478c2891dbb903d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 10
 --- !u!1 &1865384436
 GameObject:
   m_ObjectHideFlags: 0
