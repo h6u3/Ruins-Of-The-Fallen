@@ -800,7 +800,10 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: __MICROSPLAT__;MAPMAGIC2;MM_NATIVE
+    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    Standalone: __MICROSPLAT__;MAPMAGIC2;MM_NATIVE;CROSS_PLATFORM_INPUT;GAIA_2_PRESENT;GAIA_PRO_PRESENT;GAIA_MESH_PRESENT;FLORA_PRESENT;UPPipeline
+    Windows Store Apps: MOBILE_INPUT
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
