@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
 
-    #region Singleton
-
     public static PlayerManager instance;
+    private PlayerStats playerStats;
 
     private void Awake() {
         instance = this;
     }
 
-    #endregion
-
+    private void Start() {
+        playerStats = PlayerStats.instance;
+    }
     public GameObject player;
+    bool playerLives = true;
+
+    public void takeDamage(float damageAmount) {
+        if (playerLives) {
+        playerStats.changeHealth(damageAmount);
+        checkAlive();
+        }
+    }
+
+    private void checkAlive() {
+        if (playerStats.getHealth() <= 0) {
+            Die();
+        }
+    }
+
+    public void Die() {
+        playerLives = false;
+        Debug.Log("Player Died");
+    }
 }

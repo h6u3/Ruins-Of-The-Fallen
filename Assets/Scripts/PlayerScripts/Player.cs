@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
+using System.Collections;
 
 public class Player : MonoBehaviour {
 
@@ -7,67 +9,96 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
+    private float rotateSpeed = 10f;
+    private Transform currentTarget;
+    private PlayerStats playerStats;
+    private TargetUI targetUI;
+    private float coneAngle = 180f;
+    private float coneDistance = 5f;
 
-    private bool isWalking;
+    private void Start () {
+        playerStats = PlayerStats.instance;
+        targetUI = TargetUI.instance;
+    }
 
     private void Awake() {
         Instance = this;
     }
 
-    private void Start() { 
-    }
-
     private void Update() {
         HandleMovement();
-    }
 
-    public bool IsWalking() {
-        return isWalking;
+        CheckInteractCone();
+        if (gameInput.checkLeftClick()) {
+        if (currentTarget != null) {
+            Attack();
+        }
+        }
+
+        if (gameInput.checkRightClick()) {
+        }
+        currentTarget = null;
     }
 
     private void HandleMovement() {
+        float moveDistance = moveSpeed * Time.deltaTime;
 
         Vector2 inputVector = gameInput.GetMovementVectorNormalised();
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);        
 
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+        transform.position += moveDir * moveDistance;
 
-        float moveDistance = moveSpeed * Time.deltaTime;
-        float playerRadius = .3f;
-        float playerHeight = 2f;
-        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
-
-        if (!canMove) {
-            //Cannot move towards moveDir
-
-            //Only x movement
-            Vector3 moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
-            canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
-
-            if (canMove) {
-                //Can only move on the x
-                moveDir = moveDirX;
-            } else {
-                //Cannot move only on the X
-                //Attempt only Z movement
-                Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
-                canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
-
-                if (canMove) {
-                    //Can move only on the Z
-                    moveDir = moveDirZ;
-                } else {
-                    //Cannot move in any directions
-                }
-            }
-        }
-        if (canMove) {
-            transform.position += moveDir * moveDistance;
-        }
-
-        isWalking = moveDir != Vector3.zero;
-
-        float rotateSpeed = 10f;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
     }
 
+    private void CheckInteractCone() {
+
+
+    Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);
+
+    foreach (Collider collider in colliders)
+    {
+        if (collider.CompareTag("Attackable"))
+        {
+            Vector3 direction = collider.transform.position - transform.position;
+            float angle = Vector3.Angle(transform.forward, direction);
+
+            if (angle <= coneAngle * 0.5f)
+            {
+                currentTarget = collider.transform;
+                targetUI.setCurrentTarget(currentTarget);
+                targetUI.updateHealthBar();
+                break;
+            }
+        }
+    }
+
+    if (currentTarget == null) {
+        currentTarget = null;
+        targetUI.setCurrentTarget(null);
+    }
+}
+
+    private void Attack() {
+            
+            if (currentTarget.name == "Enemy") {
+                EnemyController enemyController = currentTarget.GetComponent<EnemyController>();
+
+                if (enemyController != null) {
+                    float updatedHealth = enemyController.getEnemyHealth() - playerStats.getAttack();
+                    enemyController.setEnemyHealth(updatedHealth);
+                    targetUI.updateHealthBar();
+                }
+            }
+
+            if (currentTarget.name == "Animal") {
+                AnimalController animalController = currentTarget.GetComponent<AnimalController>();
+                
+                if (animalController != null) {
+                    float updatedHealth = animalController.getAnimalHealth() - playerStats.getAttack();
+                    animalController.setAnimalHealth(updatedHealth);
+                    targetUI.updateHealthBar();
+                }
+            }
+    }
 }
