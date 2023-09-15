@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class PlayerCombat : MonoBehaviour {
 
-    public static Player Instance { get; set; }
+    public static PlayerCombat Instance { get; set; }
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
