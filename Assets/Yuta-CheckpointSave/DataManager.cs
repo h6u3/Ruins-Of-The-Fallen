@@ -13,12 +13,48 @@ public class DataManager : MonoBehaviour
     private List<DataInterface> data;
     private FileManager fileMgr;
     public static DataManager instance { get; private set; }
+    private bool playerInside = false; //For detecting the user 
+
+    //Apply a mesh collider to a game object (e.g. plane) with isTrigger enabled.
+    //Then apply the DataManager (this) file onto the plane, then it will be used as the save area.
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //If the collider detectes a player, set true
+        if (other.CompareTag("Player"))
+        {
+            playerInside = true;
+            Debug.Log("Player entered the save area."); //Logs to check functionality
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //If the collider no longer detectes a player, set false
+        if (other.CompareTag("Player"))
+        {
+            playerInside = false;
+            Debug.Log("Player exited the save area."); //Logs to check functionality
+        }
+    }
+
+    private void Update()
+    {
+        if(playerInside) //Allow for saving when the user is detected to be in the save area
+        {
+            if (Input.GetKeyDown(KeyCode.X)) //Press X to save the game
+            {
+                SaveGame();
+                Debug.Log("Saved!"); //Debug to check if it saved correctly.
+            }
+        }
+    }
 
     public void Awake()
     {
         if (instance != null)
         {
-            Debug.LogError("Found more than one persistence managers!");
+            Debug.LogError("Found more than one data managers!");
         }
         instance = this;
     }
