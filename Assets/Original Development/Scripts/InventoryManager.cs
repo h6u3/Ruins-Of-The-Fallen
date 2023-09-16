@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using static UnityEditor.Progress;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour, DataInterface
 {
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
@@ -48,5 +48,15 @@ public class InventoryManager : MonoBehaviour
             obj.GetComponent<ItemController>().item = item;
 
         }
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        this.Items = gameData.Items;
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.Items = this.Items;
     }
 }
