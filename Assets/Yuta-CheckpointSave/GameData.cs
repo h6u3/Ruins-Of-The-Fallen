@@ -4,10 +4,13 @@ using UnityEngine;
 
 [System.Serializable]
 public class GameData
-{ 
-    //Add variables intended to be saved
+{
+    public int blocksMined;
+    public Vector3 playerPosition;
+
     public GameData()
     {
-        //Initialize variables here
+        this.blocksMined = 0;
+        this.playerPosition = Vector3.zero;
     }
 }
