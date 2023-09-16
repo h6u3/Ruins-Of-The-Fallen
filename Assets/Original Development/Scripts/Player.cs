@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, DataInterface
 {
     public static Player Instance;
 
@@ -50,5 +50,19 @@ public class Player : MonoBehaviour
         HealthText.text = $"HP: {Health}";
         HydrationText.text = $"Hydration: {Hydration}%";
         HungerText.text = $"Hunger: {Hunger}%";
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        this.Health = gameData.Health;
+        this.Hydration = gameData.Hydration;
+        this.Hunger = gameData.Hunger;
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.Health = this.Health;
+        gameData.Hydration = this.Hydration;
+        gameData.Hunger = this.Hunger;
     }
 }
