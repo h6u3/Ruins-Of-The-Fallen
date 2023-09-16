@@ -27,6 +27,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1.25
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 19774c7b570298d45a79f1009fae78d7
     m_directToCamera: 0
     m_postProcessProfileURP: {fileID: 0}
@@ -3937,6 +3938,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: f0d3288284853394ea58e38e5dd7f195
     m_directToCamera: 0
     m_postProcessProfileURP: {fileID: 0}
@@ -7847,6 +7849,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1.15
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: f00c6215d794e3b4fa7c9224ffe53339
     m_directToCamera: 0
     m_postProcessProfileURP: {fileID: 0}
@@ -11757,6 +11760,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 1d8a7fb1b5c317b4ca0499e227820e25
     m_directToCamera: 0
     m_postProcessProfileURP: {fileID: 0}
@@ -13048,6 +13052,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 069b4a41406d63c40b2a3c4bec000bbe
     m_directToCamera: 0
     m_postProcessProfileURP: {fileID: 0}
@@ -16958,6 +16963,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: ef34dc04f7da6784d84249ab870770a0
     m_directToCamera: 0
     m_postProcessProfileURP: {fileID: 0}
