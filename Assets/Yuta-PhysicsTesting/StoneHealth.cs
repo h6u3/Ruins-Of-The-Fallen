@@ -11,14 +11,13 @@ public class StoneHealth : MonoBehaviour
         stone = FindObjectOfType<StoneManager>();
     }
 
-
     // Update is called once per frame
     void Update()
     {
         if (health <= 0)
         {
             Destroy(gameObject);
-            int numberOfCubesToSpawn = Random.Range(1, 6); // Random number between 1 and 5 (inclusive)
+            int numberOfCubesToSpawn = Random.Range(1, 3); // Random number between 1 and 5 (inclusive)
 
             for (int i = 0; i < numberOfCubesToSpawn; i++)
             {
