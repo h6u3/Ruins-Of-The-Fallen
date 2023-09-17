@@ -50,15 +50,6 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    //Commenting out to remove the singleton pattern, and allow for multiple save managers / runes
-    //public void Awake()
-    //{
-    //    if (instance != null)
-    //    {
-    //        Debug.LogError("Found more than one data managers!");
-    //    }
-    //    instance = this;
-    //}
 
     private void Start()
     {
@@ -102,12 +93,6 @@ public class DataManager : MonoBehaviour
         }
         //Save into the Json file
         fileMgr.save(gameData);
-    }
-
-    //TODO: Implement a proper saving system with UI
-    private void OnApplicationQuit()
-    {
-        SaveGame();
     }
 
     private List<DataInterface> FindAllDataPersistenceObjects()
