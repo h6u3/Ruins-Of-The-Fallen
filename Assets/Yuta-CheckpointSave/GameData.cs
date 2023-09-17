@@ -7,7 +7,6 @@ using UnityEngine.UI;
 [System.Serializable]
 public class GameData
 {
-    public int blocksMined;
     public Vector3 playerPosition;
 
     public int Health;
@@ -18,7 +17,6 @@ public class GameData
 
     public GameData()
     {
-        this.blocksMined = 0;
         this.playerPosition = Vector3.zero;
 
         this.Health = 0;
