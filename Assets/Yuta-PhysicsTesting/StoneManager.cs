@@ -25,16 +25,6 @@ public class StoneManager : MonoBehaviour
         TryBreak();
     }
 
-    public void LoadData(GameData data)
-    {
-        this.minedCount = data.blocksMined;
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.blocksMined = this.minedCount;
-    }
-
     public void TryBreak()
     {
         if (Input.GetMouseButton(0))
@@ -65,7 +55,7 @@ public class StoneManager : MonoBehaviour
             //Make sure the program doesn't get overloaded by the particles
             ParticleSystem.MainModule mainModule = particles.main;
             float particleLifetime = mainModule.startLifetime.constant; // Get the constant value from the MinMaxCurve
-            Destroy(particles.gameObject, particleLifetime + 0.5f); // Destroy particles after their lifetime + a small bufferr
+            Destroy(particles, particleLifetime + 0.1f); // Destroy particles after their lifetime + a small bufferr
         }
         else
         {
