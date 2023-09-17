@@ -50,14 +50,15 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public void Awake()
-    {
-        if (instance != null)
-        {
-            Debug.LogError("Found more than one data managers!");
-        }
-        instance = this;
-    }
+    //Commenting out to remove the singleton pattern, and allow for multiple save managers / runes
+    //public void Awake()
+    //{
+    //    if (instance != null)
+    //    {
+    //        Debug.LogError("Found more than one data managers!");
+    //    }
+    //    instance = this;
+    //}
 
     private void Start()
     {
