@@ -11,11 +11,12 @@ TagManager:
   - Synty Tree
   - Synty Medium Farm
   - Synty Small Farm
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Stone
   - Water
   - UI
   - 
