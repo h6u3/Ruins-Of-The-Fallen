@@ -11,7 +11,6 @@ public class StoneManager : MonoBehaviour
     [SerializeField] private float range;
     public GameObject smallerCubePrefab;
     private ParticleSystem particles;
-    public int minedCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +22,6 @@ public class StoneManager : MonoBehaviour
     void Update()
     {
         TryBreak();
-    }
-
-    public void LoadData(GameData data)
-    {
-        this.minedCount = data.blocksMined;
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.blocksMined = this.minedCount;
     }
 
     public void TryBreak()
@@ -65,7 +54,7 @@ public class StoneManager : MonoBehaviour
             //Make sure the program doesn't get overloaded by the particles
             ParticleSystem.MainModule mainModule = particles.main;
             float particleLifetime = mainModule.startLifetime.constant; // Get the constant value from the MinMaxCurve
-            Destroy(particles.gameObject, particleLifetime + 0.5f); // Destroy particles after their lifetime + a small bufferr
+            Destroy(particles.gameObject, particleLifetime + 0.1f); // Destroy particles after their lifetime + a small bufferr
         }
         else
         {
