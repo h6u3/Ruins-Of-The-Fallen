@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1375103963184189483}
   - component: {fileID: 7577735107041049727}
   - component: {fileID: -1356516899665101462}
-  m_Layer: 11
+  - component: {fileID: 4213399329576799798}
+  m_Layer: 6
   m_Name: PW_Tree_Sequoia_01_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4544379530030555269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.179078, y: 1.7465066, z: -5.4692693}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99,4 +100,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
-  stone: {fileID: 0}
+  wood: {fileID: 0}
+--- !u!136 &4213399329576799798
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544379530030555269}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 73.55428
+  m_Direction: 1
+  m_Center: {x: -0.18503523, y: 36.280697, z: 0.53639317}
