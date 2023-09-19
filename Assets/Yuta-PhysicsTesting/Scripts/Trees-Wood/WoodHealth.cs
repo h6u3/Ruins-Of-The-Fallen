@@ -6,20 +6,24 @@ public class WoodHealth : MonoBehaviour
 {
     public float health;
     [SerializeField] private WoodManager wood;
+    private bool hasDestroyed = false;
 
     void Start()
     {
         wood = FindObjectOfType<WoodManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (health <= 0)
+        if (health <= 0 && !hasDestroyed)
         {
+            hasDestroyed = true;
             Destroy(gameObject);
-            Vector3 spawnPosition = new Vector3(transform.position.x, 1f, transform.position.z); //z
-            wood.SpawnLog(spawnPosition); // Spawn a smaller log with random deviation
+
+            Rigidbody rb = wood.treePrefab.GetComponent<Rigidbody>();
+            rb.AddForce(wood.treePrefab.transform.forward * 4);
+            wood.SpawnTree(transform.position);
+            wood.SpawnLogs();
         }
     }
 }

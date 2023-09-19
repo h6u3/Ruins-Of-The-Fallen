@@ -3191,6 +3191,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2056192403}
     m_Modifications:
+    - target: {fileID: -223162182117963681, guid: 6ca5ee40f92dd244da42e0c5fcf50041,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -223162182117963681, guid: 6ca5ee40f92dd244da42e0c5fcf50041,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1357169074525009289, guid: 6ca5ee40f92dd244da42e0c5fcf50041,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3334,6 +3344,18 @@ PrefabInstance:
       propertyPath: damage
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3404878631669509065, guid: a356c7ebb2a73904f8e15d429755adf2,
+        type: 3}
+      propertyPath: logPrefab
+      value: 
+      objectReference: {fileID: 1360994071702760, guid: c46df5c8ec10c9642b27207eb8cdd2e4,
+        type: 3}
+    - target: {fileID: 3404878631669509065, guid: a356c7ebb2a73904f8e15d429755adf2,
+        type: 3}
+      propertyPath: treePrefab
+      value: 
+      objectReference: {fileID: 4544379530030555269, guid: ce11d258fdad8de4fbdf958f58c2ae51,
+        type: 3}
     - target: {fileID: 3404878631669509065, guid: a356c7ebb2a73904f8e15d429755adf2,
         type: 3}
       propertyPath: smallerCubePrefab

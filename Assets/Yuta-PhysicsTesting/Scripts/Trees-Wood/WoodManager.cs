@@ -8,9 +8,11 @@ public class WoodManager : MonoBehaviour
     [SerializeField] private LayerMask mineableObject;
     [SerializeField] private float damage;
     [SerializeField] private float range;
-    [SerializeField] private GameObject log;
+    [SerializeField] public GameObject treePrefab;
+    [SerializeField] public GameObject logPrefab;
     private ParticleSystem particles;
     private WoodHealth objectHealth;
+    public GameObject fallingTree;
 
     // Update is called once per frame
     void Update()
@@ -33,9 +35,23 @@ public class WoodManager : MonoBehaviour
             }
         }
     }
-    public void SpawnLog(Vector3 position)
+    public void SpawnTree(Vector3 position)
     {
-        Instantiate(log, position, Quaternion.identity);
+        fallingTree = Instantiate(treePrefab, position, Quaternion.identity);
+    }
+
+    public void SpawnLogs()
+    {
+        StartCoroutine(SpawnLogsDelayed(3f));
+    }
+
+    private IEnumerator SpawnLogsDelayed(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Instantiate(logPrefab, fallingTree.transform.position + new Vector3(0,1,0), Quaternion.identity);
+        Instantiate(logPrefab, fallingTree.transform.position + new Vector3(1,1,1), Quaternion.identity);
+        Instantiate(logPrefab, fallingTree.transform.position + new Vector3(2,1,2), Quaternion.identity);
+        Destroy(fallingTree);
     }
 
     public void SpawnParticles(Vector3 position)
