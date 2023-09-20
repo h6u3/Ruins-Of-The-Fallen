@@ -234,4 +234,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba23db3252c7724459473d55517a1002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: maingamesave.game
+  fileName: save1.game
