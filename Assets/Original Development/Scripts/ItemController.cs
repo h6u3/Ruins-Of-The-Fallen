@@ -8,8 +8,6 @@ public class ItemController : MonoBehaviour
 {
     public Item item;
 
-    public Button RemoveButton;
-
     public void RemoveItem()
     {
         InventoryManager.Instance.Remove(item);
@@ -24,9 +22,9 @@ public class ItemController : MonoBehaviour
 
     public void UseItem()
     {
-        Player.Instance.IncreaseHealth(item.HealthValue);
-        Player.Instance.IncreaseHydration(item.HydrationValue);
-        Player.Instance.IncreaseHunger(item.HungerValue);
+        PlayerStatsUI.Instance.IncreaseHealth(item.HealthValue);
+        PlayerStatsUI.Instance.IncreaseHydration(item.HydrationValue);
+        PlayerStatsUI.Instance.IncreaseHunger(item.HungerValue);
 
         RemoveItem();
     }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9de69c10503099478027ca9108c7f26, type: 3}
-  m_Name: Watermelon
+  m_Name: Cheese
   m_EditorClassIdentifier: 
-  id: 1
-  itemName: Watermelon
-  HealthValue: 10
-  HydrationValue: 20
-  HungerValue: 5
-  icon: {fileID: 21300000, guid: ee6448c4a14715c4181bc2b5af8f5ec0, type: 3}
+  id: 8
+  itemName: Cheese
+  HealthValue: 0
+  HydrationValue: 0
+  HungerValue: 0
+  icon: {fileID: 21300000, guid: de2461c4263720b45a3608c0dc0a2346, type: 3}
