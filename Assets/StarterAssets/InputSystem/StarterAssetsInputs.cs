@@ -109,6 +109,7 @@ namespace StarterAssets
             {
                 // Reset movement input to zero when inputs are disabled
                 move = Vector2.zero;
+                look = Vector2.zero;
             }
         }
 
