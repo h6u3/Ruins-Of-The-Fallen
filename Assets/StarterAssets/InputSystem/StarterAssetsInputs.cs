@@ -31,6 +31,7 @@ namespace StarterAssets
 
         public RectTransform ContentObject;
         public CanvasRenderer InventoryToToggle;
+        public CanvasRenderer reticle;
 
         private bool isInventoryOpen = false;
 
@@ -160,6 +161,7 @@ namespace StarterAssets
 
                 // Toggle the canvas visibility
                 InventoryToToggle.gameObject.SetActive(!InventoryToToggle.gameObject.activeSelf);
+                reticle.gameObject.SetActive(!reticle.gameObject.activeSelf);
 
                 // Update the inventory open state
                 isInventoryOpen = InventoryToToggle.gameObject.activeSelf;
