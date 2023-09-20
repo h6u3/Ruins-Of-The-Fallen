@@ -12,7 +12,7 @@ public class WoodManager : MonoBehaviour
     [SerializeField] public GameObject logPrefab;
     private ParticleSystem particles;
     private WoodHealth objectHealth;
-    public GameObject fallingTree;
+    private GameObject fallingTree;
 
     // Update is called once per frame
     void Update()

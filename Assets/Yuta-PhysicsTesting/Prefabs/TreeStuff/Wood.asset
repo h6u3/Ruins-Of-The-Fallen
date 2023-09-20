@@ -17,4 +17,4 @@ MonoBehaviour:
   HealthValue: 0
   HydrationValue: 0
   HungerValue: 0
-  icon: {fileID: 21300000, guid: e0217326729e34949942690bcf0ab40d, type: 3}
+  icon: {fileID: 21300000, guid: 57c20e77bb3f04c4bbbf453dc20bc196, type: 3}

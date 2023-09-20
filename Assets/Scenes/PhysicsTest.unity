@@ -3366,7 +3366,7 @@ PrefabInstance:
         type: 3}
       propertyPath: breakParticlesPrefab
       value: 
-      objectReference: {fileID: 6096467646218762216, guid: 903c5dfd3da8f57438bf49103ff43784,
+      objectReference: {fileID: 6096467646218762216, guid: f021eca757ad22c488a80c7a98f79eaa,
         type: 3}
     - target: {fileID: 3404878631669509065, guid: a356c7ebb2a73904f8e15d429755adf2,
         type: 3}
