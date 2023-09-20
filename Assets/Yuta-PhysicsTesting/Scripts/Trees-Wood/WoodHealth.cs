@@ -21,13 +21,7 @@ public class WoodHealth : MonoBehaviour
             Destroy(gameObject);
 
             Rigidbody rb = wood.treePrefab.GetComponent<Rigidbody>();
-
-            // Generate a random direction vector
-            Vector3 randomDirection = Random.insideUnitSphere;
-
-            // Apply the force in the random direction
-            rb.AddForce(randomDirection * 4);
-
+            rb.AddForce(wood.treePrefab.transform.forward * 4);
             wood.SpawnTree(transform.position);
             wood.SpawnLogs();
         }

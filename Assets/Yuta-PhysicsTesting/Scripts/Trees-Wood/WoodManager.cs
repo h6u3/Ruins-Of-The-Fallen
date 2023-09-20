@@ -48,10 +48,10 @@ public class WoodManager : MonoBehaviour
     private IEnumerator SpawnLogsDelayed(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(fallingTree);
         Instantiate(logPrefab, fallingTree.transform.position + new Vector3(0,1,0), Quaternion.identity);
         Instantiate(logPrefab, fallingTree.transform.position + new Vector3(1,1,1), Quaternion.identity);
         Instantiate(logPrefab, fallingTree.transform.position + new Vector3(2,1,2), Quaternion.identity);
+        Destroy(fallingTree);
     }
 
     public void SpawnParticles(Vector3 position)
