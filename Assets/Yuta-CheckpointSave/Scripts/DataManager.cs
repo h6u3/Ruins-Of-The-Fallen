@@ -99,4 +99,9 @@ public class DataManager : MonoBehaviour
         .OfType<DataInterface>()
         .ToList();
     }
+
+    public bool getPlayerInside()
+    {
+        return playerInside;
+    }
 }
