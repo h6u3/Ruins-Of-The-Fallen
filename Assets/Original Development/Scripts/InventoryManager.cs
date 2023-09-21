@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using static UnityEditor.Progress;
+using System.Linq;
 
 public class InventoryManager : MonoBehaviour, DataInterface
 {
@@ -48,6 +49,26 @@ public class InventoryManager : MonoBehaviour, DataInterface
             obj.GetComponent<ItemController>().item = item;
 
         }
+    }
+
+    public List<Item> SortAlphaAsc()
+    {
+        return Items.OrderBy(Item => Item.itemName).ToList();
+    }
+
+    public List<Item> SortAlphaDesc()
+    {
+        return Items.OrderBy(Item => Item.itemName).Reverse().ToList();
+    }
+
+    public List<Item> SortIDAsc()
+    {
+        return Items.OrderBy(Item => Item.id).ToList();
+    }
+
+    public List<Item> SortIDDesc()
+    {
+        return Items.OrderBy(Item => Item.id).Reverse().ToList();
     }
 
     public void LoadData(GameData gameData)
