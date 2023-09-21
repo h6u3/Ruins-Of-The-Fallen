@@ -14,10 +14,34 @@ public class EnemySpawner : MonoBehaviour {
     private float Health;
     private float Attack;
     private ThreatLevel threatLevel;
+    private int CoolDown;
+    private int eId;
+    private int concurrentEnemies;
 
     private void Start() {
+        CoolDown = 0;
+        eId = 0;
+        concurrentEnemies = 0;
         for (int i = 0; i < 2; i++) {
-            SpawnEnemy(i);
+            SpawnEnemy(eId);
+            eId++;
+            concurrentEnemies++;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        CoolDown += 1;
+        CoolDown %= 20;
+        if(CoolDown == 0)
+        {
+            int ranNum = UnityEngine.Random.Range(1, 5);
+            if (ranNum == 1 && concurrentEnemies < 10)
+            {
+                SpawnEnemy(eId);
+                eId++;
+                concurrentEnemies++;
+            }
         }
     }
 
@@ -65,5 +89,10 @@ public class EnemySpawner : MonoBehaviour {
                 Health = 55;
                 break;
         }
+    }
+
+    public void enemyDied()
+    {
+        concurrentEnemies--;
     }
 }

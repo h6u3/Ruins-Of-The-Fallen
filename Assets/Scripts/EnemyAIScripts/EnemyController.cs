@@ -16,11 +16,15 @@ public class EnemyController : MonoBehaviour
     private bool canAttack = true;
     Transform target;
     NavMeshAgent agent;
+    [SerializeField]private EnemySpawner spawner;
+    public Animation anim;
 
     void Start()
     {
+        anim = GetComponent<Animation>();
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        spawner = FindObjectOfType<EnemySpawner>();
     }
     
     void Update()
@@ -45,7 +49,9 @@ public class EnemyController : MonoBehaviour
     
     //Runs the takeDamage function in PlayerManager causing the player to take damage equal to attackValue
     public void AttackTarget() {
+        anim.CrossFade("attack1");
         PlayerManager.instance.takeDamage(Attack);
+        
     }
 
     // Prevents further attacks for the specified cooldown period (attackCooldown)
@@ -96,7 +102,8 @@ public class EnemyController : MonoBehaviour
 
     private void Die() {
         Destroy(enemyObject);
-        //Play death animation, drop loot
+        //Play death animation, drop loot\
+        spawner.enemyDied();
     }
 
     public void setGameObject(GameObject enemy) {

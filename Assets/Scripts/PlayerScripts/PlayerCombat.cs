@@ -30,9 +30,9 @@ public class PlayerCombat : MonoBehaviour {
 
         CheckInteractCone();
         if (gameInput.checkLeftClick()) {
-        if (currentTarget != null) {
-            Attack();
-        }
+            if (currentTarget != null) {
+                Attack();
+            }
         }
 
         if (gameInput.checkRightClick()) {
@@ -52,32 +52,31 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     private void CheckInteractCone() {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);
 
-
-    Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);
-
-    foreach (Collider collider in colliders)
-    {
-        if (collider.CompareTag("Attackable"))
+        foreach (Collider collider in colliders)
         {
-            Vector3 direction = collider.transform.position - transform.position;
-            float angle = Vector3.Angle(transform.forward, direction);
-
-            if (angle <= coneAngle * 0.5f)
+            if (collider.CompareTag("Attackable"))
             {
-                currentTarget = collider.transform;
-                targetUI.setCurrentTarget(currentTarget);
-                targetUI.updateHealthBar();
-                break;
+                Debug.Log("Attackable!!!!");
+                Vector3 direction = collider.transform.position - transform.position;
+                float angle = Vector3.Angle(transform.forward, direction);
+
+                if (angle <= coneAngle * 0.5f)
+                {
+                    currentTarget = collider.transform;
+                    targetUI.setCurrentTarget(currentTarget);
+                    targetUI.updateHealthBar();
+                    break;
+                }
             }
         }
-    }
 
-    if (currentTarget == null) {
-        currentTarget = null;
-        targetUI.setCurrentTarget(null);
+        if (currentTarget == null) {
+            currentTarget = null;
+            targetUI.setCurrentTarget(null);
+        }
     }
-}
 
     private void Attack() {
             
