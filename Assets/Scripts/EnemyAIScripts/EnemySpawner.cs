@@ -22,11 +22,9 @@ public class EnemySpawner : MonoBehaviour {
         CoolDown = 0;
         eId = 0;
         concurrentEnemies = 0;
-        for (int i = 0; i < 2; i++) {
-            SpawnEnemy(eId);
-            eId++;
-            concurrentEnemies++;
-        }
+        SpawnEnemy(eId);
+        eId++;
+        concurrentEnemies++;
     }
 
     private void FixedUpdate()

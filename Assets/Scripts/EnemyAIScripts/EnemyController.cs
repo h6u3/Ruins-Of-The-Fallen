@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animation>();
+        anim.Play("run");
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         spawner = FindObjectOfType<EnemySpawner>();
@@ -39,25 +41,25 @@ public class EnemyController : MonoBehaviour
 
             if (alive)
             {
-                anim.Play("walk");
                 agent.SetDestination(target.position);
             }
             
 
             if (targetDistance <= agent.stoppingDistance && alive) {
                 if (canAttack) {
-                AttackTarget();
+                StartCoroutine(AttackTarget());
                 StartCoroutine(AttackCooldown());
                 }
-
                 checkEnemyHealth();
             }
         }
     }
-    
+
     //Runs the takeDamage function in PlayerManager causing the player to take damage equal to attackValue
-    public void AttackTarget() {
+    IEnumerator AttackTarget() {
         anim.Play("attack1");
+        yield return new WaitForSeconds(1);
+        anim.Play("run");
         if (targetDistance <= agent.stoppingDistance)
         {
             PlayerManager.instance.takeDamage(Attack);
@@ -116,7 +118,7 @@ public class EnemyController : MonoBehaviour
         anim.Play("death1");
         alive = false;
         wanderAi.setAlive(false);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         Destroy(enemyObject);
         spawner.enemyDied();
     }

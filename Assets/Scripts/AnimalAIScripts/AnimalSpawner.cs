@@ -12,10 +12,36 @@ public class AnimalSpawner : MonoBehaviour {
     public Transform spawnPoint;
     private float Health;
     private ThreatLevel threatLevel;
+    private int CoolDown;
+    private int aId;
+    private int concurrentAnimals;
 
-    private void Start() {
-        for (int i = 0; i < 2; i++) {
-            SpawnAnimal(i);
+    private void Start()
+    {
+        CoolDown = 0;
+        aId = 0;
+        concurrentAnimals = 0;
+        for (int i = 0; i < 2; i++)
+        {
+            SpawnAnimal(aId);
+            aId++;
+            concurrentAnimals++;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        CoolDown += 1;
+        CoolDown %= 20;
+        if (CoolDown == 0)
+        {
+            int ranNum = UnityEngine.Random.Range(1, 10);
+            if (ranNum == 1 && concurrentAnimals < 10)
+            {
+                SpawnAnimal(aId);
+                aId++;
+                concurrentAnimals++;
+            }
         }
     }
 

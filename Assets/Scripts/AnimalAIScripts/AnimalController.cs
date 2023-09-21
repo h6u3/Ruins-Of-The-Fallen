@@ -8,7 +8,6 @@ public class AnimalController : MonoBehaviour {
 
     Transform target;
     NavMeshAgent agent;
-    private bool isWalking;
     private float AnimalHealth;
     private float MaxAnimalHealth;
     private string threatLevel;
