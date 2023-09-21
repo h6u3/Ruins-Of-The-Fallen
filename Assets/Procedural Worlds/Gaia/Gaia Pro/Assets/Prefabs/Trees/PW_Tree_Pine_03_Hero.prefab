@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2712048274891375373}
   - component: {fileID: 3301348667173541321}
   - component: {fileID: 2944589593381881113}
-  m_Layer: 11
+  - component: {fileID: 8365602418462687771}
+  m_Layer: 6
   m_Name: PW_Tree_Pine_03_Hero
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -91,6 +92,20 @@ CapsuleCollider:
   m_Height: 14.169182
   m_Direction: 1
   m_Center: {x: 0, y: 6.593054, z: 0}
+--- !u!114 &8365602418462687771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439032372800155934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  wood: {fileID: 0}
 --- !u!1 &7769436341039156274
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +117,7 @@ GameObject:
   - component: {fileID: 9104546206073865253}
   - component: {fileID: 8740112825371435601}
   - component: {fileID: 8573223570586809992}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: PW_Tree_Hero_Pine_03_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +201,7 @@ GameObject:
   - component: {fileID: 2529370469463686200}
   - component: {fileID: 8045090272785877417}
   - component: {fileID: 4856654711273334783}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: PW_Tree_Hero_Pine_03_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +285,7 @@ GameObject:
   - component: {fileID: 5157201158673466498}
   - component: {fileID: 1834734550137098603}
   - component: {fileID: 2771598971182839728}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: PW_Tree_Hero_Pine_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +375,7 @@ PrefabInstance:
     - target: {fileID: 3867944588830977745, guid: 157b0856138b5b6469b15edfdcd273e3,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3867944588830977745, guid: 157b0856138b5b6469b15edfdcd273e3,
         type: 3}

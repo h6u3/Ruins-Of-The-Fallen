@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7524779289036077819}
   - component: {fileID: 5386159933892935362}
   - component: {fileID: 8863323372989563843}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Spruce_01_06_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7035756769472662149}
   - component: {fileID: 6665910034990295879}
   - component: {fileID: 1763485465033664842}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Spruce_01_06_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,8 @@ GameObject:
   - component: {fileID: 7592746522912219291}
   - component: {fileID: 7002327944618702431}
   - component: {fileID: 5604136110461698854}
-  m_Layer: 9
+  - component: {fileID: -2243250021303911718}
+  m_Layer: 6
   m_Name: PW_Tree_Spruce_06
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -259,6 +260,20 @@ CapsuleCollider:
   m_Height: 3.71
   m_Direction: 1
   m_Center: {x: 0, y: 1.46, z: 0}
+--- !u!114 &-2243250021303911718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847023277904564872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  wood: {fileID: 0}
 --- !u!1 &9027141366034133529
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +285,7 @@ GameObject:
   - component: {fileID: 5795897888646689124}
   - component: {fileID: 1971114114210605004}
   - component: {fileID: 8740578961603069684}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Spruce_01_06_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 5371622853208406235, guid: ef8aa9ba42edf614193940ac87a93b9d,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5371622853208406235, guid: ef8aa9ba42edf614193940ac87a93b9d,
         type: 3}

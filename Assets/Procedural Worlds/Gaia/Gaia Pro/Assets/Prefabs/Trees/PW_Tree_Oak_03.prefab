@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1394668284443080007}
   - component: {fileID: 1957172462604100483}
   - component: {fileID: 6485035193648512653}
-  m_Layer: 10
+  - component: {fileID: -8813756860107939850}
+  m_Layer: 6
   m_Name: PW_Tree_Oak_03
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -91,6 +92,20 @@ CapsuleCollider:
   m_Height: 6.0381007
   m_Direction: 1
   m_Center: {x: 0, y: 2.5190504, z: 0}
+--- !u!114 &-8813756860107939850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666556158452254548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  wood: {fileID: 0}
 --- !u!1 &6030077261346541759
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +117,7 @@ GameObject:
   - component: {fileID: 6847658041829011300}
   - component: {fileID: 5775586788146759042}
   - component: {fileID: 4420858412099918566}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: PW_Tree_Oak_03_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +201,7 @@ GameObject:
   - component: {fileID: 1079606126446664350}
   - component: {fileID: 783471622805685855}
   - component: {fileID: 6470498580582924795}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: PW_Tree_Oak_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +285,7 @@ GameObject:
   - component: {fileID: 8467738142817625633}
   - component: {fileID: 7354625875601788702}
   - component: {fileID: 2374723129326381609}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: PW_Tree_Oak_03_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 2467053288849783909, guid: da7f4f178046d8d4cb4dbfb826ded482,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2467053288849783909, guid: da7f4f178046d8d4cb4dbfb826ded482,
         type: 3}

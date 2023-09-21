@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 237591157370686402}
   - component: {fileID: 2413458544489172787}
   - component: {fileID: 5191017636346360475}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: PW_Tree_Birch_02_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1027881740022684005}
   - component: {fileID: 315624148524603754}
   - component: {fileID: 7534617071146098635}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: PW_Tree_Birch_02_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,8 @@ GameObject:
   - component: {fileID: 5569741657108558856}
   - component: {fileID: 4987785040695698124}
   - component: {fileID: 8247535872852252354}
-  m_Layer: 10
+  - component: {fileID: -1280001731463373224}
+  m_Layer: 6
   m_Name: PW_Tree_Birch_02
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -254,6 +255,20 @@ CapsuleCollider:
   m_Height: 7.903158
   m_Direction: 1
   m_Center: {x: 0, y: 3.451579, z: 0}
+--- !u!114 &-1280001731463373224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867846463526290971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  wood: {fileID: 0}
 --- !u!1001 &1748940643234038816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,7 +285,7 @@ PrefabInstance:
     - target: {fileID: 1601236423849998216, guid: 1cc925edacf21dd4cb9fe349f855770c,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1601236423849998216, guid: 1cc925edacf21dd4cb9fe349f855770c,
         type: 3}

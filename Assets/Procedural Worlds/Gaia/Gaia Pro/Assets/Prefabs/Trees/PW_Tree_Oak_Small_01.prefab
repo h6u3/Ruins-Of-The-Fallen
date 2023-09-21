@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3204657406612214240}
   - component: {fileID: 7512325145832925923}
   - component: {fileID: 2201604067617381996}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Oak_Small_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,8 @@ GameObject:
   - component: {fileID: 1787771092850760217}
   - component: {fileID: 1206101309386575069}
   - component: {fileID: 4651258853867504055}
-  m_Layer: 9
+  - component: {fileID: -3878084323502163517}
+  m_Layer: 6
   m_Name: PW_Tree_Oak_Small_01
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -170,6 +171,20 @@ CapsuleCollider:
   m_Height: 3.16888
   m_Direction: 1
   m_Center: {x: 0, y: 1.315726, z: 0}
+--- !u!114 &-3878084323502163517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3356353315087722506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  wood: {fileID: 0}
 --- !u!1 &7060173420818576825
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +196,7 @@ GameObject:
   - component: {fileID: 7077709077572258259}
   - component: {fileID: 7438178996225188630}
   - component: {fileID: 2239207300291958804}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Oak_Small_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 4100761697609765004, guid: 3524840cdd82b85429a0f358d632410e,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

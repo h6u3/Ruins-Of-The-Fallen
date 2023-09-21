@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 325772304591539163}
   - component: {fileID: 7124957718142351944}
   - component: {fileID: 3377048979809941993}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: PW_Tree_Dead_02_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 150842476281842811}
   - component: {fileID: 748856447749315263}
   - component: {fileID: 7248459244107750551}
-  m_Layer: 11
+  - component: {fileID: 3445263441696995658}
+  m_Layer: 6
   m_Name: PW_Tree_Dead_02_01
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -174,6 +175,20 @@ CapsuleCollider:
   m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 4.5, z: 0}
+--- !u!114 &3445263441696995658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768597777551408744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  wood: {fileID: 0}
 --- !u!1 &5206684374794112054
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +200,7 @@ GameObject:
   - component: {fileID: 647232557819688402}
   - component: {fileID: 482960729051081974}
   - component: {fileID: 2726783107751208637}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: PW_Tree_Dead_02_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +283,7 @@ GameObject:
   - component: {fileID: 8636439347859567183}
   - component: {fileID: 4305467887707610390}
   - component: {fileID: 6803820067324525449}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: PW_Tree_Dead_02_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +371,7 @@ PrefabInstance:
     - target: {fileID: 2854260443513806521, guid: e541c9836f6c4144d82a46699a01e0d0,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6062484632300338460, guid: e541c9836f6c4144d82a46699a01e0d0,
         type: 3}
