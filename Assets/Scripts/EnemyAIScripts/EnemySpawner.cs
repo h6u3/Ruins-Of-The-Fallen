@@ -22,11 +22,9 @@ public class EnemySpawner : MonoBehaviour {
         CoolDown = 0;
         eId = 0;
         concurrentEnemies = 0;
-        for (int i = 0; i < 2; i++) {
-            SpawnEnemy(eId);
-            eId++;
-            concurrentEnemies++;
-        }
+        SpawnEnemy(eId);
+        eId++;
+        concurrentEnemies++;
     }
 
     private void FixedUpdate()
@@ -36,7 +34,7 @@ public class EnemySpawner : MonoBehaviour {
         if(CoolDown == 0)
         {
             int ranNum = UnityEngine.Random.Range(1, 5);
-            if (ranNum == 1 && concurrentEnemies < 10)
+            if (ranNum == 1 && concurrentEnemies < 1)
             {
                 SpawnEnemy(eId);
                 eId++;
