@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour {
         if(CoolDown == 0)
         {
             int ranNum = UnityEngine.Random.Range(1, 5);
-            if (ranNum == 1 && concurrentEnemies < 10)
+            if (ranNum == 1 && concurrentEnemies < 1)
             {
                 SpawnEnemy(eId);
                 eId++;

@@ -58,7 +58,7 @@ public class PlayerCombat : MonoBehaviour {
         {
             if (collider.CompareTag("Attackable"))
             {
-                Debug.Log("Attackable!!!!");
+                //Debug.Log("Attackable!!!!");
                 Vector3 direction = collider.transform.position - transform.position;
                 float angle = Vector3.Angle(transform.forward, direction);
 

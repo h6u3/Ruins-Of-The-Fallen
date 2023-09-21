@@ -17,7 +17,10 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
     [SerializeField]private EnemySpawner spawner;
+    private WanderAI_NavMeshRefactor wanderAi;
     public Animation anim;
+    private float targetDistance;
+    private bool alive = true;
 
     void Start()
     {
@@ -25,18 +28,23 @@ public class EnemyController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         spawner = FindObjectOfType<EnemySpawner>();
+        wanderAi = GetComponent<WanderAI_NavMeshRefactor>();
     }
     
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        targetDistance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius ) {
+        if (targetDistance <= lookRadius ) {
 
-            agent.SetDestination(target.position);
+            if (alive)
+            {
+                anim.Play("walk");
+                agent.SetDestination(target.position);
+            }
             
 
-            if (distance <= agent.stoppingDistance) {
+            if (targetDistance <= agent.stoppingDistance && alive) {
                 if (canAttack) {
                 AttackTarget();
                 StartCoroutine(AttackCooldown());
@@ -49,9 +57,11 @@ public class EnemyController : MonoBehaviour
     
     //Runs the takeDamage function in PlayerManager causing the player to take damage equal to attackValue
     public void AttackTarget() {
-        anim.CrossFade("attack1");
-        PlayerManager.instance.takeDamage(Attack);
-        
+        anim.Play("attack1");
+        if (targetDistance <= agent.stoppingDistance)
+        {
+            PlayerManager.instance.takeDamage(Attack);
+        }
     }
 
     // Prevents further attacks for the specified cooldown period (attackCooldown)
@@ -96,13 +106,18 @@ public class EnemyController : MonoBehaviour
 
     private  void checkEnemyHealth() {
         if (EnemyHealth <= 0) {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    private void Die() {
-        Destroy(enemyObject);
+    private IEnumerator Die()
+    {
         //Play death animation, drop loot\
+        anim.Play("death1");
+        alive = false;
+        wanderAi.setAlive(false);
+        yield return new WaitForSeconds(1);
+        Destroy(enemyObject);
         spawner.enemyDied();
     }
 
