@@ -24,7 +24,7 @@ MonoBehaviour:
   m_terrainDepth: 1024
   m_terrainHeight: 1024
   m_seaLevel: 21
-  m_spawnDensity: 0.2
+  m_spawnDensity: 0.12
   m_isLocked: 0
   m_previewImageBytes: 
   m_previewImageWidth: 0
@@ -214,12 +214,68 @@ MonoBehaviour:
     sessionPlaybackState: 1
     m_terrainsFoldedOut: 0
     m_serializedExternalAction: 
+  - m_description: 'Spawning - '
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_1_1-20230915 - 154111
+    - Terrain_0_1-20230915 - 154111
+    - Terrain_1_0-20230915 - 154111
+    - Terrain_0_0-20230915 - 154111
+    m_operationDateTime: 9/17/2023 10:23:31 PM
+    scriptableObjectAssetGUID: 1132e831307ebb3448cc29c491fa9d4d
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: 'Spawning - '
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_1_1-20230915 - 154111
+    - Terrain_0_1-20230915 - 154111
+    - Terrain_1_0-20230915 - 154111
+    - Terrain_0_0-20230915 - 154111
+    m_operationDateTime: 9/17/2023 10:25:24 PM
+    scriptableObjectAssetGUID: 89788d6184760894292fd8dc5ec8c60c
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: 'Spawning - '
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_1_1-20230915 - 154111
+    - Terrain_0_1-20230915 - 154111
+    - Terrain_1_0-20230915 - 154111
+    - Terrain_0_0-20230915 - 154111
+    m_operationDateTime: 9/17/2023 10:28:12 PM
+    scriptableObjectAssetGUID: b4dc4c72fc8faaa4ca96b10e913aaaeb
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Alpine Meadow-Stone(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_1_1-20230915 - 154111
+    - Terrain_0_1-20230915 - 154111
+    - Terrain_1_0-20230915 - 154111
+    - Terrain_0_0-20230915 - 154111
+    m_operationDateTime: 9/20/2023 5:07:26 PM
+    scriptableObjectAssetGUID: f603f199f6368394aa735de38a52bf87
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
   m_terrainMinMaxCache:
   - guid: 4202bb0faf9612143a4a943f44005598
     isWorldmap: 0
-    recalculate: 1
+    recalculate: 0
     min: 0
-    max: 139.89471
+    max: 126.100555
   - guid: 1df2052324a1e6041b4c2d06fd9f9c95
     isWorldmap: 0
     recalculate: 0

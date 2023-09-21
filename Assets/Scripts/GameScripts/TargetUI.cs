@@ -36,38 +36,36 @@ public class TargetUI : MonoBehaviour
 
     public void setCurrentTarget(Transform target) {
         if (target != null) {
-        currentTarget = target;
+            currentTarget = target;
 
-         if (currentTarget.name == "Enemy") {
-            EnemyController enemyController = currentTarget.GetComponent<EnemyController>();
+             if (currentTarget.name == "Enemy") {
+                EnemyController enemyController = currentTarget.GetComponent<EnemyController>();
 
-            if (enemyController != null) {
-                targetHealth = enemyController.getEnemyHealth();
-                maxTargetHealth = enemyController.getMaxEnemyHealth();
-                targetThreatLevel = enemyController.GetThreatLevel();
+                if (enemyController != null) {
+                    targetHealth = enemyController.getEnemyHealth();
+                    maxTargetHealth = enemyController.getMaxEnemyHealth();
+                    targetThreatLevel = enemyController.GetThreatLevel();
+                }
             }
-        }
 
-        if (currentTarget.name == "Animal") {
-            AnimalController animalController = currentTarget.GetComponent<AnimalController>();
+            if (currentTarget.name == "Animal") {
+                AnimalController animalController = currentTarget.GetComponent<AnimalController>();
                 
-            if (animalController != null) {
-                targetHealth = animalController.getAnimalHealth();
-                maxTargetHealth = animalController.getMaxAnimalHealth();
-                targetThreatLevel = animalController.GetThreatLevel();
+                if (animalController != null) {
+                    targetHealth = animalController.getAnimalHealth();
+                    maxTargetHealth = animalController.getMaxAnimalHealth();
+                    targetThreatLevel = animalController.GetThreatLevel();
+                }
             }
-        }
 
-        setTargetText();
-        ShowUI(true);
+            setTargetText();
+            ShowUI(true);
         }
         else {
             NPCName.text = "";
             ShowUI(false);
             currentTarget = null;
         }
-        
-
     }
 
     private void setTargetText() {

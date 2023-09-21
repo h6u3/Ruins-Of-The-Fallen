@@ -45,18 +45,15 @@ public class PlayerStatsUI : MonoBehaviour, DataInterface
         HungerText.text = $"Hunger: {Hunger}%";
     }
 
-    public void Start()
-    {
-        HealthText.text = $"HP: {Health}";
-        HydrationText.text = $"Hydration: {Hydration}%";
-        HungerText.text = $"Hunger: {Hunger}%";
-    }
-
     public void LoadData(GameData gameData)
     {
         this.Health = gameData.Health;
         this.Hydration = gameData.Hydration;
         this.Hunger = gameData.Hunger;
+
+        HealthText.text = $"HP: {Health}";
+        HydrationText.text = $"Hydration: {Hydration}%";
+        HungerText.text = $"Hunger: {Hunger}%";
     }
 
     public void SaveData(ref GameData gameData)
