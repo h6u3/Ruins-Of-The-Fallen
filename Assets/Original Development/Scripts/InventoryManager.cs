@@ -80,4 +80,27 @@ public class InventoryManager : MonoBehaviour, DataInterface
     {
         gameData.Items = this.Items;
     }
+    public void SortItemsAlphaAsc()
+    {
+        Items = SortAlphaAsc();
+        ListItems(); // Refresh the UI after sorting
+    }
+
+    public void SortItemsAlphaDesc()
+    {
+        Items = SortAlphaDesc();
+        ListItems(); // Refresh the UI after sorting
+    }
+
+    public void SortItemsIDAsc()
+    {
+        Items = SortIDAsc();
+        ListItems(); // Refresh the UI after sorting
+    }
+
+    public void SortItemsIDDesc()
+    {
+        Items = SortIDDesc();
+        ListItems(); // Refresh the UI after sorting
+    }
 }
