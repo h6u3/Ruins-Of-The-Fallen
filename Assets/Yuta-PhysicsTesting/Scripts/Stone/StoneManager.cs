@@ -36,6 +36,7 @@ public class StoneManager : MonoBehaviour
     }
     public void SpawnSmallerCube(Vector3 position)
     {
+        position += new Vector3(0,1,0);
         Instantiate(smallerCubePrefab, position, Quaternion.identity);
     }
 

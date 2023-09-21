@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1920158762507531025}
   - component: {fileID: 1357369846267340245}
   - component: {fileID: 6362344953995518284}
+  - component: {fileID: 7683075622934432749}
   m_Layer: 10
   m_Name: PW_Stone_01
   m_TagString: PW - Nature
@@ -170,9 +171,23 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1662968920003909772, guid: 874cf0d250d948647b7462635030ce90, type: 3}
+--- !u!114 &7683075622934432749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3242204568188846338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f91ff34a11a8374eb60b401958d8e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  stone: {fileID: 0}
 --- !u!1 &4195447602797839849
 GameObject:
   m_ObjectHideFlags: 0

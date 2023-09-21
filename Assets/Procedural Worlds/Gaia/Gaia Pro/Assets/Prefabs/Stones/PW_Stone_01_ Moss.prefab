@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 2185892743267259456}
   - component: {fileID: 1596041493377090180}
   - component: {fileID: 803015916880304581}
-  - component: {fileID: 8713065728711603815}
+  - component: {fileID: 9126996490833621433}
+  - component: {fileID: 3608577333886318358}
   m_Layer: 10
   m_Name: PW_Stone_01_ Moss
   m_TagString: PW - Nature
@@ -174,7 +175,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1662968920003909772, guid: 874cf0d250d948647b7462635030ce90, type: 3}
---- !u!54 &8713065728711603815
+--- !u!54 &9126996490833621433
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,6 +202,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3608577333886318358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886385177403745875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f91ff34a11a8374eb60b401958d8e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  stone: {fileID: 0}
 --- !u!1 &4524189885515850424
 GameObject:
   m_ObjectHideFlags: 0

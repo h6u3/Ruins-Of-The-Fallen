@@ -4,9 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour, DataInterface
+public class PlayerStatsUI : MonoBehaviour, DataInterface
 {
-    public static Player Instance;
+    public static PlayerStatsUI Instance;
 
     public int Health;
     public int Hydration;
