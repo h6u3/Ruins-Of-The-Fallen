@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gaia;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,7 +14,9 @@ public class AnimalController : MonoBehaviour {
     private float MaxAnimalHealth;
     private string threatLevel;
     private float animalID;
+    private AnimalSpawner spawner;
     private GameObject animalObject;
+    private bool active;
 
 
     void Start() {
@@ -22,16 +26,26 @@ public class AnimalController : MonoBehaviour {
 
 
     void Update() {
-        float distance = Vector3.Distance(target.position, transform.position);
-
-        if (distance <= lookRadius) {
-            Vector3 fleeDistance = -target.position*2;
-            agent.SetDestination(fleeDistance);
-
+        active = spawner.getPlayerInsideArea();
+        if (active)
+        {
             checkAnimalHealth();
-        }
+            if (agent.isOnNavMesh){
+                float distance = Vector3.Distance(target.position, transform.position);
 
-        
+                if (distance <= lookRadius)
+                {
+                    Vector3 fleeDistance = -target.position * 2;
+                    agent.SetDestination(fleeDistance);
+
+                }
+            }
+        }
+        else
+        {
+            Destroy(animalObject);
+            spawner.animalDied();
+        }
     }
 
     public void takeDamage(float damage) {
@@ -67,6 +81,7 @@ public class AnimalController : MonoBehaviour {
     private void Die() {
         Destroy(animalObject);
         //Play death animation, drop loot
+        spawner.animalDied();
     }
 
     public void setGameObject(GameObject animal) {
@@ -89,5 +104,10 @@ public class AnimalController : MonoBehaviour {
                 threatLevel = "High";
                 break;
         }
+    }
+
+    internal void setSpawnerParent(AnimalSpawner animalSpawner)
+    {
+        spawner = animalSpawner;
     }
 }

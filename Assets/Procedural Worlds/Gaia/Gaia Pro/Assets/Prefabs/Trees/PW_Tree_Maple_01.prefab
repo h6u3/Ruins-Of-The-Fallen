@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 3367108184657276529}
   - component: {fileID: 2794977917619452085}
   - component: {fileID: 4187919394906101906}
-  - component: {fileID: -6948657947585889444}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Maple_01
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -92,20 +91,6 @@ CapsuleCollider:
   m_Height: 10.335175
   m_Direction: 1
   m_Center: {x: 0, y: 4.6675873, z: 0}
---- !u!114 &-6948657947585889444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1792721638791863394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 200
-  wood: {fileID: 0}
 --- !u!1 &2518494084866901767
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +102,7 @@ GameObject:
   - component: {fileID: 911514681370058199}
   - component: {fileID: 7198448837493592712}
   - component: {fileID: 7494039418962958124}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Maple_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +186,7 @@ GameObject:
   - component: {fileID: 8380677968392927398}
   - component: {fileID: 3493641261364823950}
   - component: {fileID: 2820274896516844953}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Maple_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +270,7 @@ GameObject:
   - component: {fileID: 3668067240901514347}
   - component: {fileID: 8632835852590657430}
   - component: {fileID: 4920136947240541723}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Maple_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 7980349442047999905, guid: cb6bad6a40972df449179b7d465ebe22,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7980349442047999905, guid: cb6bad6a40972df449179b7d465ebe22,
         type: 3}

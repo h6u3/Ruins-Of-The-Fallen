@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 4600307058961227209}
   - component: {fileID: 4009343260204010253}
   - component: {fileID: 9154502133586970496}
-  - component: {fileID: 9199619077997595327}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Dead_02_02
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -92,20 +91,6 @@ CapsuleCollider:
   m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 4.5, z: 0}
---- !u!114 &9199619077997595327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688148307621310426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 200
-  wood: {fileID: 0}
 --- !u!1 &1946622902410619555
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +102,7 @@ GameObject:
   - component: {fileID: 5425440009877444802}
   - component: {fileID: 2562806580472205851}
   - component: {fileID: 7989543999819695242}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Dead_02_02_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +185,7 @@ GameObject:
   - component: {fileID: 6382586808038190540}
   - component: {fileID: 6156192119607250262}
   - component: {fileID: 4669445877906192458}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Dead_02_02_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +268,7 @@ GameObject:
   - component: {fileID: 3400170840628688741}
   - component: {fileID: 6348803170933726286}
   - component: {fileID: 4496376278220358074}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Dead_02_02_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 2218921791254564814, guid: f965fc5f0334c0d44b2a59e0dd754cb7,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2218921791254564814, guid: f965fc5f0334c0d44b2a59e0dd754cb7,
         type: 3}

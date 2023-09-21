@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 625451612318001749}
   - component: {fileID: 6575918097796719216}
   - component: {fileID: 4145302921707935904}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Pine_01_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,8 +95,7 @@ GameObject:
   - component: {fileID: 2518706605217980185}
   - component: {fileID: 3064594845817932253}
   - component: {fileID: 7105712225506968254}
-  - component: {fileID: -7590749621194613839}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Pine_01_Long
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -176,20 +175,6 @@ CapsuleCollider:
   m_Height: 15
   m_Direction: 1
   m_Center: {x: 0, y: 6.5, z: 0}
---- !u!114 &-7590749621194613839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490523839772519690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 200
-  wood: {fileID: 0}
 --- !u!1 &2675958622148838784
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +186,7 @@ GameObject:
   - component: {fileID: 2502095291333697891}
   - component: {fileID: 5925482924842536183}
   - component: {fileID: 8738222360863527292}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Pine_01_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +271,7 @@ GameObject:
   - component: {fileID: 7533400415136065967}
   - component: {fileID: 1313861640285345197}
   - component: {fileID: 8925832590112016939}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Pine_01_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 692907556058452307, guid: d71f9578c3f706446a0a420335b35715,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 692907556058452307, guid: d71f9578c3f706446a0a420335b35715,
         type: 3}

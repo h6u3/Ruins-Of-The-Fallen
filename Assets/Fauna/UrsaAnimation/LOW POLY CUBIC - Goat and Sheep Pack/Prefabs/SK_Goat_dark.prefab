@@ -4812,7 +4812,7 @@ GameObject:
   - component: {fileID: 8276554501383267766}
   - component: {fileID: 7990969995852739316}
   - component: {fileID: -1971696091191100976}
-  - component: {fileID: 1208061620559105852}
+  - component: {fileID: -5227182577466364718}
   m_Layer: 0
   m_Name: SK_Goat_dark
   m_TagString: Attackable
@@ -4936,8 +4936,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1208061620559105852
-CapsuleCollider:
+--- !u!135 &-5227182577466364718
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4954,11 +4954,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!1 &2828524356560822119
 GameObject:
   m_ObjectHideFlags: 0

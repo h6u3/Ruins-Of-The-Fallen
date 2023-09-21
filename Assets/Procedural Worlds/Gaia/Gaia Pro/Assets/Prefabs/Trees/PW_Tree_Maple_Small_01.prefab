@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7646944316115585119}
   - component: {fileID: 4181853980619691937}
   - component: {fileID: 8561350841222731081}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Maple_Small_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,8 +95,7 @@ GameObject:
   - component: {fileID: 663549340405347533}
   - component: {fileID: 92033566015496713}
   - component: {fileID: 7503439185951450025}
-  - component: {fileID: -3049703172273400953}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Maple_Small_01
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -171,20 +170,6 @@ CapsuleCollider:
   m_Height: 4.0494757
   m_Direction: 1
   m_Center: {x: 0, y: 1.5247378, z: 0}
---- !u!114 &-3049703172273400953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4570660237049644766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 200
-  wood: {fileID: 0}
 --- !u!1 &7093123900150269527
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +181,7 @@ GameObject:
   - component: {fileID: 5277971347600652234}
   - component: {fileID: 8795340808818285156}
   - component: {fileID: 5228370499195882971}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Maple_Small_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 7809102140178553708, guid: 63de09e42b3c0fc498a15d111564d562,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809102140178553708, guid: 63de09e42b3c0fc498a15d111564d562,
         type: 3}
