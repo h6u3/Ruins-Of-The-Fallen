@@ -14,8 +14,8 @@ public class PlayerCombat : MonoBehaviour {
     private Transform currentTarget;
     private PlayerStats playerStats;
     private TargetUI targetUI;
-    private float coneAngle = 180f;
-    private float coneDistance = 8f;
+    private float coneAngle = 90f;
+    private float coneDistance = 5f;
 
     private void Start () {
         playerStats = PlayerStats.instance;

@@ -4,13 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour, DataInterface
+public class PlayerStatsUI : MonoBehaviour, DataInterface
 {
-    public static Player Instance;
+    public static PlayerStatsUI Instance;
 
-    public int Health;
-    public int Hydration;
-    public int Hunger;
+    public int Health = 1;
+    public int Hydration = 1;
+    public int Hunger = 1;
 
     public Text HealthText;
     public Text HydrationText;
@@ -26,6 +26,14 @@ public class Player : MonoBehaviour, DataInterface
         Health += value;
         if (Health > 100)
             Health = 100;
+        HealthText.text = $"HP: {Health}";
+    }
+
+    public void DecreaseHealth(int value)
+    {
+        Health -= value;
+        if (Health < 0)
+            Health = 0;
         HealthText.text = $"HP: {Health}";
     }
 

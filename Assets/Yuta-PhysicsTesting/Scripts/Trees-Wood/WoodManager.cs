@@ -12,7 +12,7 @@ public class WoodManager : MonoBehaviour
     [SerializeField] public GameObject logPrefab;
     private ParticleSystem particles;
     private WoodHealth objectHealth;
-    public GameObject fallingTree;
+    private GameObject fallingTree;
 
     // Update is called once per frame
     void Update()
@@ -49,8 +49,8 @@ public class WoodManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Instantiate(logPrefab, fallingTree.transform.position + new Vector3(0,1,0), Quaternion.identity);
-        Instantiate(logPrefab, fallingTree.transform.position + new Vector3(1,1,1), Quaternion.identity);
-        Instantiate(logPrefab, fallingTree.transform.position + new Vector3(2,1,2), Quaternion.identity);
+        Instantiate(logPrefab, fallingTree.transform.position + new Vector3(1,1,0), Quaternion.identity);
+        Instantiate(logPrefab, fallingTree.transform.position + new Vector3(-1,1,0), Quaternion.identity);
         Destroy(fallingTree);
     }
 
