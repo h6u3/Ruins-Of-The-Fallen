@@ -30,14 +30,14 @@ public class EnemySpawner : MonoBehaviour {
         //If the collider detectes a player, set true
         if (other.CompareTag("Player"))
         {
-            int temp = eId + 10;
+            playerInsideArea = true;
+            int temp = eId + 5;
             for (int i = eId; i < temp; i++)
             {
                 SpawnEnemy(i);
                 eId++;
                 concurrentEnemies++;
             }
-            playerInsideArea = true;
             Debug.Log("Player entered the enemy area."); //Logs to check functionality
         }
     }
@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour {
             if (CoolDown == 0)
             {
                 int ranNum = UnityEngine.Random.Range(1, 5);
-                if (ranNum == 1 && concurrentEnemies < 10)
+                if (ranNum == 1 && concurrentEnemies < 5)
                 {
                     SpawnEnemy(eId);
                     eId++;
@@ -80,7 +80,7 @@ public class EnemySpawner : MonoBehaviour {
     private void SpawnEnemy(int enemyID) {
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
         newEnemy.name = "Enemy";
-        
+
         EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
 
         threatLevel = GetThreatLevel();
@@ -93,7 +93,10 @@ public class EnemySpawner : MonoBehaviour {
             enemyController.setEnemyID(enemyID);
             enemyController.setGameObject(newEnemy);
             enemyController.setThreatLevel((int)threatLevel);
+            enemyController.setSpawnerParent(this);
         }
+
+        Debug.Log("Enemy Spawned");
     }
 
     private ThreatLevel GetThreatLevel() {
