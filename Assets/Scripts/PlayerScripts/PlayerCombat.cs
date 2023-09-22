@@ -41,17 +41,17 @@ public class PlayerCombat : MonoBehaviour {
         currentTarget = null;
     }
 
-    private void HandleMovement()
-    {
-        float moveDistance = moveSpeed * Time.deltaTime;
+    //private void HandleMovement()
+    //{
+    //    float moveDistance = moveSpeed * Time.deltaTime;
 
-        Vector2 inputVector = gameInput.GetMovementVectorNormalised();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+    //    Vector2 inputVector = gameInput.GetMovementVectorNormalised();
+    //    Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
-        transform.position += moveDir * moveDistance;
+    //    transform.position += moveDir * moveDistance;
 
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
-    }
+    //    transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+    //}
 
     private void CheckInteractCone() {
         Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);

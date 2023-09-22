@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    private float lookRadius = 10f;
+    private float lookRadius = 15f;
     private float attackCooldown = 3.0f;
     [SerializeField]private float EnemyHealth;
     private float MaxEnemyHealth;
@@ -33,27 +33,22 @@ public class EnemyController : MonoBehaviour
         playerManager = FindObjectOfType<PlayerManager>();
         target = playerManager.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        spawner = FindObjectOfType<EnemySpawner>();
         wanderAi = GetComponent<WanderAI_NavMeshRefactor>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
         active = spawner.getPlayerInsideArea();
         if (active)
         {
-            if (agent.isOnNavMesh)
+            targetDistance = Vector3.Distance(target.position, this.transform.position);
+
+            if (targetDistance <= lookRadius)
             {
-                targetDistance = Vector3.Distance(target.position, transform.position);
-
-                if (targetDistance <= lookRadius)
+                if (alive)
                 {
-                    if (alive)
-                    {
-                        agent.SetDestination(target.position);
-                    }
-
-                    if (targetDistance <= agent.stoppingDistance && alive)
+                    agent.SetDestination(target.position); 
+                    if (targetDistance <= agent.stoppingDistance)
                     {
                         if (canAttack)
                         {
@@ -157,5 +152,10 @@ public class EnemyController : MonoBehaviour
                 threatLevel = "High";
                 break;
         }
+    }
+
+    internal void setSpawnerParent(EnemySpawner eSpawner)
+    {
+        spawner = eSpawner;
     }
 }
