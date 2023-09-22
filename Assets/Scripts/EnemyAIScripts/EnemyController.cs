@@ -42,7 +42,6 @@ public class EnemyController : MonoBehaviour
         active = spawner.getPlayerInsideArea();
         if (active)
         {
-            checkEnemyHealth();
             if (agent.isOnNavMesh)
             {
                 targetDistance = Vector3.Distance(target.position, transform.position);
@@ -124,7 +123,7 @@ public class EnemyController : MonoBehaviour
         return threatLevel;
     }
 
-    private  void checkEnemyHealth()
+    public void checkHealth()
     {
         if (EnemyHealth <= 0) {
             StartCoroutine(Die());
