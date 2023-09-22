@@ -1,14 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    private float lookRadius = 5f;
+    private float lookRadius = 10f;
     private float attackCooldown = 3.0f;
-    private float EnemyHealth;
+    [SerializeField]private float EnemyHealth;
     private float MaxEnemyHealth;
     private float Attack;
     private string threatLevel;
@@ -22,12 +23,15 @@ public class EnemyController : MonoBehaviour
     public Animation anim;
     private float targetDistance;
     private bool alive = true;
+    private bool active;
+    [SerializeField] private PlayerManager playerManager;
 
     void Start()
     {
         anim = GetComponent<Animation>();
         anim.Play("run");
-        target = PlayerManager.instance.player.transform;
+        playerManager = FindObjectOfType<PlayerManager>();
+        target = playerManager.player.transform;
         agent = GetComponent<NavMeshAgent>();
         spawner = FindObjectOfType<EnemySpawner>();
         wanderAi = GetComponent<WanderAI_NavMeshRefactor>();
@@ -35,35 +39,49 @@ public class EnemyController : MonoBehaviour
     
     void Update()
     {
-        targetDistance = Vector3.Distance(target.position, transform.position);
-
-        if (targetDistance <= lookRadius ) {
-
-            if (alive)
+        active = spawner.getPlayerInsideArea();
+        if (active)
+        {
+            checkEnemyHealth();
+            if (agent.isOnNavMesh)
             {
-                agent.SetDestination(target.position);
-            }
-            
+                targetDistance = Vector3.Distance(target.position, transform.position);
 
-            if (targetDistance <= agent.stoppingDistance && alive) {
-                if (canAttack) {
-                StartCoroutine(AttackTarget());
-                StartCoroutine(AttackCooldown());
+                if (targetDistance <= lookRadius)
+                {
+                    if (alive)
+                    {
+                        agent.SetDestination(target.position);
+                    }
+
+                    if (targetDistance <= agent.stoppingDistance && alive)
+                    {
+                        if (canAttack)
+                        {
+                            StartCoroutine(AttackTarget());
+                            StartCoroutine(AttackCooldown());
+                        }
+                    }
                 }
-                checkEnemyHealth();
             }
         }
+        else
+        {
+            Destroy(enemyObject);
+            spawner.enemyDied();
+        }
+
     }
 
     //Runs the takeDamage function in PlayerManager causing the player to take damage equal to attackValue
     IEnumerator AttackTarget() {
         anim.Play("attack1");
         yield return new WaitForSeconds(1);
-        anim.Play("run");
         if (targetDistance <= agent.stoppingDistance)
         {
             PlayerManager.instance.takeDamage(Attack);
         }
+        anim.Play("run");
     }
 
     // Prevents further attacks for the specified cooldown period (attackCooldown)
@@ -106,7 +124,8 @@ public class EnemyController : MonoBehaviour
         return threatLevel;
     }
 
-    private  void checkEnemyHealth() {
+    private  void checkEnemyHealth()
+    {
         if (EnemyHealth <= 0) {
             StartCoroutine(Die());
         }
