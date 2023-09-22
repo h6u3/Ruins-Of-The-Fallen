@@ -90,6 +90,7 @@ public class PlayerCombat : MonoBehaviour {
                 float updatedHealth = enemyController.getEnemyHealth() - playerStats.getAttack();
                 enemyController.setEnemyHealth(updatedHealth);
                 targetUI.updateHealthBar();
+                enemyController.checkHealth();
             }
         }
 
@@ -100,8 +101,7 @@ public class PlayerCombat : MonoBehaviour {
                 float updatedHealth = animalController.getAnimalHealth() - playerStats.getAttack();
                 animalController.setAnimalHealth(updatedHealth);
                 targetUI.updateHealthBar();
-                float temp = animalController.getAnimalHealth();
-                Debug.Log(temp);
+                animalController.checkHealth();
             }
         }
     }
