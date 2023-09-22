@@ -19,9 +19,9 @@ public class PlayerManager : MonoBehaviour {
 
     public void takeDamage(float damageAmount) {
         if (playerLives) {
-        playerStats.changeHealth(damageAmount);
-        checkAlive();
+            playerStats.changeHealth(damageAmount);
         }
+        checkAlive();
     }
 
     private void checkAlive() {
@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void Die() {
         playerLives = false;
+        playerStats.changeHealth(0f); //updates health bar i think
         Debug.Log("Player Died");
     }
 }

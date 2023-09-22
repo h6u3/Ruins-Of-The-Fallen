@@ -9,13 +9,14 @@ public class WanderAI_NavMeshRefactor : MonoBehaviour {
     private bool isWandering = false;
     public float wanderRadius = 10f;
     private float wanderTimer = 5f;
+    private bool alive = true;
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update() {
-        if (!isWandering) {
+        if (!isWandering && alive) {
             StartCoroutine(Wander());
         }
     }
@@ -33,5 +34,11 @@ public class WanderAI_NavMeshRefactor : MonoBehaviour {
         yield return new WaitForSeconds(wanderTimer);
 
         isWandering = false;
+
+    }
+
+    public void setAlive(bool live)
+    {
+        alive = live;
     }
 }

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using UnityEngine.SocialPlatforms;
 
 public class PlayerCombat : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class PlayerCombat : MonoBehaviour {
     private Transform currentTarget;
     private PlayerStats playerStats;
     private TargetUI targetUI;
-    private float coneAngle = 180f;
+    private float coneAngle = 90f;
     private float coneDistance = 5f;
 
     private void Start () {
@@ -26,7 +27,7 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     private void Update() {
-        HandleMovement();
+        //HandleMovement();
 
         CheckInteractCone();
         if (gameInput.checkLeftClick()) {
@@ -40,11 +41,12 @@ public class PlayerCombat : MonoBehaviour {
         currentTarget = null;
     }
 
-    private void HandleMovement() {
+    private void HandleMovement()
+    {
         float moveDistance = moveSpeed * Time.deltaTime;
 
         Vector2 inputVector = gameInput.GetMovementVectorNormalised();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);        
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
         transform.position += moveDir * moveDistance;
 
@@ -58,7 +60,7 @@ public class PlayerCombat : MonoBehaviour {
         {
             if (collider.CompareTag("Attackable"))
             {
-                Debug.Log("Attackable!!!!");
+                //Debug.Log("enemyinrange");
                 Vector3 direction = collider.transform.position - transform.position;
                 float angle = Vector3.Angle(transform.forward, direction);
 
@@ -72,7 +74,8 @@ public class PlayerCombat : MonoBehaviour {
             }
         }
 
-        if (currentTarget == null) {
+        if (currentTarget == null)
+        {
             currentTarget = null;
             targetUI.setCurrentTarget(null);
         }
@@ -80,24 +83,26 @@ public class PlayerCombat : MonoBehaviour {
 
     private void Attack() {
             
-            if (currentTarget.name == "Enemy") {
-                EnemyController enemyController = currentTarget.GetComponent<EnemyController>();
+        if (currentTarget.name == "Enemy") {
+            EnemyController enemyController = currentTarget.GetComponent<EnemyController>();
 
-                if (enemyController != null) {
-                    float updatedHealth = enemyController.getEnemyHealth() - playerStats.getAttack();
-                    enemyController.setEnemyHealth(updatedHealth);
-                    targetUI.updateHealthBar();
-                }
+            if (enemyController != null) {
+                float updatedHealth = enemyController.getEnemyHealth() - playerStats.getAttack();
+                enemyController.setEnemyHealth(updatedHealth);
+                targetUI.updateHealthBar();
             }
+        }
 
-            if (currentTarget.name == "Animal") {
-                AnimalController animalController = currentTarget.GetComponent<AnimalController>();
+        if (currentTarget.name == "Animal") {
+            AnimalController animalController = currentTarget.GetComponent<AnimalController>();
                 
-                if (animalController != null) {
-                    float updatedHealth = animalController.getAnimalHealth() - playerStats.getAttack();
-                    animalController.setAnimalHealth(updatedHealth);
-                    targetUI.updateHealthBar();
-                }
+            if (animalController != null) {
+                float updatedHealth = animalController.getAnimalHealth() - playerStats.getAttack();
+                animalController.setAnimalHealth(updatedHealth);
+                targetUI.updateHealthBar();
+                float temp = animalController.getAnimalHealth();
+                Debug.Log(temp);
             }
+        }
     }
 }
