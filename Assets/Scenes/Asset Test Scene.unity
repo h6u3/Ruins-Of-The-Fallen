@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1814456841}
+      - m_Target: {fileID: 836536976}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
         m_MethodName: SortItemsAlphaDesc
         m_Mode: 1
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1814456841}
+      - m_Target: {fileID: 836536976}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
         m_MethodName: SortItemsAlphaAsc
         m_Mode: 1
@@ -653,6 +653,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4555381320572302870}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &836536976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8938347266943609131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b072f6b68a55b5469a6f852b415b3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &957502329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1046,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1814456841}
+      - m_Target: {fileID: 836536976}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
         m_MethodName: SortItemsIDAsc
         m_Mode: 1
@@ -1198,9 +1210,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1814456841}
+      - m_Target: {fileID: 836536976}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: SortItemsAlphaDesc
+        m_MethodName: SortItemsIDDesc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1382,18 +1394,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749491523}
   m_CullTransparentMesh: 1
---- !u!114 &1814456841 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8938347266943609131}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b072f6b68a55b5469a6f852b415b3ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1839937221
 GameObject:
   m_ObjectHideFlags: 0
