@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4154955344410948423}
   - component: {fileID: 7528994928951928210}
   - component: {fileID: 3193417260908573010}
+  - component: {fileID: 7024736276428804409}
   m_Layer: 0
   m_Name: Pickaxe_LOD0
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7024736276428804409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662111728014428840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a50bd062234594b8681272f0229155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 2da235fe1aeca8447b2c016c75bbafea, type: 2}
