@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class HotbarItem : MonoBehaviour
 {
-    public Item item;
+    public ItemAsset item;
 }

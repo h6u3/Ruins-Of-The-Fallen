@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9de69c10503099478027ca9108c7f26, type: 3}
+  m_Script: {fileID: 11500000, guid: 88db5315c18f32c4fb0772c108972c63, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  id: 52
-  itemName: Axe
-  HealthValue: 0
-  HydrationValue: 0
-  HungerValue: 0
-  icon: {fileID: 0}
-  isConsumable: 0
+  item_type: 2
+  item_sprite: {fileID: 21300000, guid: 82d09fa9d1de77148992c73dd0b1589b, type: 3}
