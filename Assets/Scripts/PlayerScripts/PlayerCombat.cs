@@ -8,9 +8,9 @@ public class PlayerCombat : MonoBehaviour {
 
     public static PlayerCombat Instance { get; set; }
 
-    [SerializeField] private float moveSpeed = 7f;
+    //[SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
-    private float rotateSpeed = 10f;
+    //private float rotateSpeed = 10f;
     private Transform currentTarget;
     private PlayerStats playerStats;
     private TargetUI targetUI;
