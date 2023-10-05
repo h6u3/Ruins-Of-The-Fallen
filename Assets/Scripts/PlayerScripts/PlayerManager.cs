@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour {
 
     private void Update()
     {
+        //constant decrease of hydration and hunger. health decreases when either or both have depleted fully.
         float rate = 5 * Time.deltaTime;
         float randomNumber = Random.Range(0, 10);
         if ((playerStats.getHunger()>0) && (randomNumber >= 8.25))
