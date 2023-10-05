@@ -45,12 +45,28 @@ public class PlayerStatsUI : MonoBehaviour, DataInterface
         HydrationText.text = $"Hydration: {Hydration}%";
     }
 
+    public void DecreaseHydration(int value)
+    {
+        Hydration -= value;
+        if (Hydration < 0)
+            Hydration = 0;
+        HydrationText.text = $"Hydration: {Hydration}%";
+    }
+
     public void IncreaseHunger(int value)
     {
         Hunger += value;
         if (Hunger > 100)
             Hunger = 100;
         HungerText.text = $"Hunger: {Hunger}%";
+    }
+
+    public void DecreaseHunger(int value)
+    {
+        Hunger -= value;
+        if (Hunger < 0)
+            Hunger = 0;
+        HungerText.text = $"Hunger: {Hunger}";
     }
 
     public void LoadData(GameData gameData)
