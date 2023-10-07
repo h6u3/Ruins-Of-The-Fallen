@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 607951716013886400}
   - component: {fileID: 6691462622350927952}
   - component: {fileID: 3321829848317463149}
-  - component: {fileID: 821976450021917548}
+  - component: {fileID: 7317145755997023309}
   m_Layer: 0
   m_Name: banana
   m_TagString: Untagged
@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 332cf3fa96633914f8e4b1b47d5077fa, type: 2}
---- !u!64 &821976450021917548
-MeshCollider:
+--- !u!136 &7317145755997023309
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,7 +130,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300014, guid: 3f4d2118f6a772542a1635ef5bfa6982, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.008
+  m_Height: 0.02
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.0015}
