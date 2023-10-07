@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 2666469155648461898}
   - component: {fileID: 5251816479910031809}
   - component: {fileID: 6958943647241469862}
+  - component: {fileID: 4792813120092592144}
   m_Layer: 0
   m_Name: Ham
   m_TagString: Pickupable
@@ -443,3 +444,16 @@ CapsuleCollider:
   m_Height: 1.2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.08}
+--- !u!114 &4792813120092592144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342348631057810775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 13f210e4404542548be86d2168f64312, type: 2}

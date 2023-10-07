@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6691462622350927952}
   - component: {fileID: 3321829848317463149}
   - component: {fileID: 7317145755997023309}
+  - component: {fileID: 1858664636837443792}
   m_Layer: 0
   m_Name: banana
   m_TagString: Untagged
@@ -135,3 +136,16 @@ CapsuleCollider:
   m_Height: 0.02
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.0015}
+--- !u!114 &1858664636837443792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337945777182921213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 332cf3fa96633914f8e4b1b47d5077fa, type: 2}

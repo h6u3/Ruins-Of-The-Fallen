@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7305626027802925863}
   - component: {fileID: 5748375179601202601}
   - component: {fileID: 7038809038906099232}
+  - component: {fileID: -4315594802476752622}
   m_Layer: 0
   m_Name: DrumstickRaw
   m_TagString: Pickupable
@@ -109,6 +110,19 @@ CapsuleCollider:
   m_Height: 0.9
   m_Direction: 0
   m_Center: {x: 0.3, y: 0, z: 0}
+--- !u!114 &-4315594802476752622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603404843741459078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 0575702ecdcb0994a89c4f049832a310, type: 2}
 --- !u!1 &2406839463774187372
 GameObject:
   m_ObjectHideFlags: 0

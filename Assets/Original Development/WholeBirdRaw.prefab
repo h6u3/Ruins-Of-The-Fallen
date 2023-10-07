@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7599933913258804652}
   - component: {fileID: 1580429196375796409}
   - component: {fileID: 5607048595514933688}
+  - component: {fileID: 7633413392274337461}
   m_Layer: 0
   m_Name: WholeBirdRaw
   m_TagString: Pickupable
@@ -234,6 +235,19 @@ CapsuleCollider:
   m_Height: 0.6
   m_Direction: 0
   m_Center: {x: 0.4, y: 0.13, z: -0.44}
+--- !u!114 &7633413392274337461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861041057724898275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: dd53963f1f278e543be2e798786a29fe, type: 2}
 --- !u!1 &4269819617927220529
 GameObject:
   m_ObjectHideFlags: 0
