@@ -13,7 +13,7 @@ public class Tooltip : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        ItemNameDisplayScript._instance.SetAndShowTextBox(item.itemName);
+        ItemNameDisplayScript._instance.SetAndShowTextBox("Press E to pickup\n" + item.itemName);
     }
 
     private void OnMouseExit()

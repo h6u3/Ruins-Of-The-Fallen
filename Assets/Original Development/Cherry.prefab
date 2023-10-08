@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cherry
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: da4eeef492c0d1842963d6576330682d, type: 3}
+      propertyPath: m_TagString
+      value: Pickupable
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: da4eeef492c0d1842963d6576330682d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -138,4 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 4948fe7e2738d7a4e9b4b2d2cd0c47ce, type: 2}
