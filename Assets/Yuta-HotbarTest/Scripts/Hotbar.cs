@@ -15,6 +15,13 @@ public class Hotbar : MonoBehaviour
     [SerializeField] GameObject pickaxe;
     [SerializeField] GameObject axe;
 
+    [SerializeField] Image[] hotbarImages = new Image[3];
+    [SerializeField] Image[] backgroundImages = new Image[3];
+
+    [SerializeField] Sprite swordSprite;
+    [SerializeField] Sprite pickaxeSprite;
+    [SerializeField] Sprite axeSprite;
+
     //Index of the current selected item
     public int selectedItem;
 
@@ -30,6 +37,13 @@ public class Hotbar : MonoBehaviour
 
         //Call the method to set the initial selected item
         NewItemSelected();
+        backgroundImages[0].color = Color.white;
+        backgroundImages[1].color = Color.grey;
+        backgroundImages[2].color = Color.grey;
+
+        hotbarImages[0].sprite = swordSprite;
+        hotbarImages[1].sprite = pickaxeSprite;
+        hotbarImages[2].sprite = axeSprite;
     }
 
     private void Update()
@@ -39,18 +53,30 @@ public class Hotbar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && hotbarList.Count > 0) {
             selectedItem = 0;
             NewItemSelected();
+            backgroundImages[0].color = Color.white;
+            backgroundImages[1].color = Color.grey;
+            backgroundImages[2].color = Color.grey;
+
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && hotbarList.Count > 0)
         {
             selectedItem = 1;
             NewItemSelected();
+            backgroundImages[0].color = Color.grey;
+            backgroundImages[1].color = Color.white;
+            backgroundImages[2].color = Color.grey;
+
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3) && hotbarList.Count > 0)
         {
             selectedItem = 2;
             NewItemSelected();
+            backgroundImages[0].color = Color.grey;
+            backgroundImages[1].color = Color.grey;
+            backgroundImages[2].color = Color.white;
         }
     }
+
     private void NewItemSelected()
     {
         //Deactivate all gameobject items by default
