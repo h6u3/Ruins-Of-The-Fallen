@@ -7,7 +7,6 @@ using UnityEngine;
 public class ItemAsset : ScriptableObject
 {
     public itemType item_type; //Item type
-    public Sprite item_sprite; //For UI element
 }
 
 //Enum of the items available. 
