@@ -24,8 +24,8 @@ public class InventoryManager : MonoBehaviour, DataInterface
     public void Add(Item item)
     {
         Items.Add(item);
-
         itemPopUp.ShowPopUp(item.itemName);
+        ListItems();
     }
 
     public void Remove(Item item)
