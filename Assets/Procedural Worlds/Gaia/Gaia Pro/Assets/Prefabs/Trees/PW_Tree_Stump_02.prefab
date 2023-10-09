@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4291890767190153172}
   - component: {fileID: 1420899481369610915}
   - component: {fileID: 7269935829337609979}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Stump_02_LOD0
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 1950621778833100213}
   - component: {fileID: 1396571881807993713}
   - component: {fileID: 961893092683574956}
-  m_Layer: 9
+  - component: {fileID: 9080326444655248170}
+  m_Layer: 6
   m_Name: PW_Tree_Stump_02
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -173,6 +174,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5971827725713994950, guid: 1df454e473a1b054fba486d2eda872c8, type: 3}
+--- !u!114 &9080326444655248170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263238312297119654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a73b91aad032574ba762d6ecb1e8d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  wood: {fileID: 0}
 --- !u!1 &4216654072747736544
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +199,7 @@ GameObject:
   - component: {fileID: 969744502508247834}
   - component: {fileID: 7139738831769198871}
   - component: {fileID: 9149512468762292199}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Stump_02_LOD1
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -267,7 +282,7 @@ GameObject:
   - component: {fileID: 5154881900476271933}
   - component: {fileID: 5431824929820865640}
   - component: {fileID: 643596795384504640}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Stump_02_LOD2
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -350,7 +365,7 @@ GameObject:
   - component: {fileID: 9093060082927942611}
   - component: {fileID: 1925454443963181476}
   - component: {fileID: 418586767654135088}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: PW_Tree_Stump_02_LOD3
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}

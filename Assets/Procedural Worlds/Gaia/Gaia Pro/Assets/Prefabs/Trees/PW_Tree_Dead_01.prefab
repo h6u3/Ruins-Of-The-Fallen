@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1201680777516832132}
   - component: {fileID: 1792050960252814144}
   - component: {fileID: 7021093283902298847}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PW_Tree_Dead_01
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1891989818418097197}
   - component: {fileID: 1443700666103117065}
   - component: {fileID: 3994031960574164802}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PW_Tree_Dead_01_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 7304864941192752048}
   - component: {fileID: 2988916917390427369}
   - component: {fileID: 5536852964961084022}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PW_Tree_Dead_01_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ PrefabInstance:
     - target: {fileID: 1588376133993171381, guid: 74e209550e2a6a547b4b847e632dbf3b,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1588376133993171381, guid: 74e209550e2a6a547b4b847e632dbf3b,
         type: 3}

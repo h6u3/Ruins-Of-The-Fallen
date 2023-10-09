@@ -31,7 +31,8 @@ public class GameInput : MonoBehaviour
         return false;
     }
 
-    public Vector2 GetMovementVectorNormalised() {
+    public Vector2 GetMovementVectorNormalised()
+    {
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
         inputVector = inputVector.normalized;
 

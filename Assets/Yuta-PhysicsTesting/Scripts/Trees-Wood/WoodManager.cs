@@ -13,6 +13,8 @@ public class WoodManager : MonoBehaviour
     private ParticleSystem particles;
     private WoodHealth objectHealth;
     private GameObject fallingTree;
+    [SerializeField] private Hotbar hotbar;
+
 
     // Update is called once per frame
     void Update()
@@ -22,7 +24,7 @@ public class WoodManager : MonoBehaviour
 
     public void TryBreak()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && hotbar.selectedItem == 2)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
