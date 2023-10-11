@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   itemName: Cheese
-  HealthValue: 0
-  HydrationValue: 0
-  HungerValue: 0
+  HealthValue: 1
+  HydrationValue: 1
+  HungerValue: 1
   icon: {fileID: 21300000, guid: de2461c4263720b45a3608c0dc0a2346, type: 3}
   isConsumable: 1
