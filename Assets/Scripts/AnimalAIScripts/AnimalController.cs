@@ -29,7 +29,7 @@ public class AnimalController : MonoBehaviour {
         active = spawner.getPlayerInsideArea();
         if (active)
         {
-            checkAnimalHealth();
+            checkHealth();
             if (agent.isOnNavMesh){
                 float distance = Vector3.Distance(target.position, transform.position);
 
@@ -72,7 +72,7 @@ public class AnimalController : MonoBehaviour {
         animalID = ID;
     }
 
-    private  void checkAnimalHealth() {
+    public void checkHealth() {
         if (AnimalHealth <= 0) {
             Die();
         }

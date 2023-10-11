@@ -8,9 +8,9 @@ public class PlayerCombat : MonoBehaviour {
 
     public static PlayerCombat Instance { get; set; }
 
-    [SerializeField] private float moveSpeed = 7f;
+    //[SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
-    private float rotateSpeed = 10f;
+    //private float rotateSpeed = 10f;
     private Transform currentTarget;
     private PlayerStats playerStats;
     private TargetUI targetUI;
@@ -41,17 +41,17 @@ public class PlayerCombat : MonoBehaviour {
         currentTarget = null;
     }
 
-    private void HandleMovement()
-    {
-        float moveDistance = moveSpeed * Time.deltaTime;
+    //private void HandleMovement()
+    //{
+    //    float moveDistance = moveSpeed * Time.deltaTime;
 
-        Vector2 inputVector = gameInput.GetMovementVectorNormalised();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+    //    Vector2 inputVector = gameInput.GetMovementVectorNormalised();
+    //    Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
-        transform.position += moveDir * moveDistance;
+    //    transform.position += moveDir * moveDistance;
 
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
-    }
+    //    transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+    //}
 
     private void CheckInteractCone() {
         Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);
@@ -90,6 +90,7 @@ public class PlayerCombat : MonoBehaviour {
                 float updatedHealth = enemyController.getEnemyHealth() - playerStats.getAttack();
                 enemyController.setEnemyHealth(updatedHealth);
                 targetUI.updateHealthBar();
+                enemyController.checkHealth();
             }
         }
 
@@ -100,8 +101,7 @@ public class PlayerCombat : MonoBehaviour {
                 float updatedHealth = animalController.getAnimalHealth() - playerStats.getAttack();
                 animalController.setAnimalHealth(updatedHealth);
                 targetUI.updateHealthBar();
-                float temp = animalController.getAnimalHealth();
-                Debug.Log(temp);
+                animalController.checkHealth();
             }
         }
     }

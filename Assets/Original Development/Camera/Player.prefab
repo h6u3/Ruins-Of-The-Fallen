@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e081cce1a298543b6843a7369eeb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
-  Hydration: 50
-  Hunger: 50
+  Health: 100
+  Hydration: 100
+  Hunger: 100
   HealthText: {fileID: 0}
   HydrationText: {fileID: 0}
   HungerText: {fileID: 0}
