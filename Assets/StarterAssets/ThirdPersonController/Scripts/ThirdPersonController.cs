@@ -95,6 +95,7 @@ namespace StarterAssets
         private int _animIDSpeed;
         private int _animIDGrounded;
         private int _animIDJump;
+        private int _animIDPickUp;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
@@ -171,6 +172,7 @@ namespace StarterAssets
             _animIDSpeed = Animator.StringToHash("Speed");
             _animIDGrounded = Animator.StringToHash("Grounded");
             _animIDJump = Animator.StringToHash("Jump");
+            _animIDPickUp = Animator.StringToHash("PickUp");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
         }
