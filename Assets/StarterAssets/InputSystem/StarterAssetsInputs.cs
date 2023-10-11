@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.UI;
 
 /*
  * Edited to change the input values so that when the TAB key
@@ -31,8 +30,11 @@ namespace StarterAssets
 
         public RectTransform ContentObject;
         public CanvasRenderer InventoryToToggle;
+        public CanvasRenderer reticle;
 
         private bool isInventoryOpen = false;
+
+        public float maxDistance = 5f;
 
 #if ENABLE_INPUT_SYSTEM
         private void OnEnable()
@@ -109,6 +111,7 @@ namespace StarterAssets
             {
                 // Reset movement input to zero when inputs are disabled
                 move = Vector2.zero;
+                look = Vector2.zero;
             }
         }
 
@@ -159,6 +162,7 @@ namespace StarterAssets
 
                 // Toggle the canvas visibility
                 InventoryToToggle.gameObject.SetActive(!InventoryToToggle.gameObject.activeSelf);
+                reticle.gameObject.SetActive(!reticle.gameObject.activeSelf);
 
                 // Update the inventory open state
                 isInventoryOpen = InventoryToToggle.gameObject.activeSelf;
@@ -169,10 +173,31 @@ namespace StarterAssets
                 }
 
             }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                TryPickup();
+            }
         }
         private void SetPosition(RectTransform go)
         {
             go.localPosition = new Vector3(go.GetComponent<RectTransform>().localPosition.x, 0, go.GetComponent<RectTransform>().localPosition.y);
+        }
+
+        private void TryPickup()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance))
+            {
+                if (hit.collider.CompareTag("Pickupable"))
+                {
+                    ItemPickup itemPickup = hit.collider.GetComponent<ItemPickup>();
+                    if (itemPickup != null)
+                    {
+                        itemPickup.Pickup();
+                    }
+                }
+            }
         }
     }
 }

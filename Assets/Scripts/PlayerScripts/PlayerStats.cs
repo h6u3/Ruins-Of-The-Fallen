@@ -5,15 +5,23 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
     public static PlayerStats instance;
-    private float Health = 30f;
+    private PlayerStatsUI player;
+    private float Health = 50f;
     private float Attack = 5f;
 
     private void Awake() {
+        player = GetComponent<PlayerStatsUI>();
         instance = this;
     }
 
+    private void Update()
+    {
+        Health = (float)player.Health;
+    }
+
     public void changeHealth(float damage) {
-        Health -= damage;
+        player.DecreaseHealth((int)damage);
+        Health -= (int) damage;
     }
 
     public float getHealth() {

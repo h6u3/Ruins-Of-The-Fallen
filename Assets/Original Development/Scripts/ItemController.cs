@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,6 @@ using static UnityEditor.Progress;
 public class ItemController : MonoBehaviour
 {
     public Item item;
-
-    public Button RemoveButton;
 
     public void RemoveItem()
     {
@@ -24,10 +23,13 @@ public class ItemController : MonoBehaviour
 
     public void UseItem()
     {
-        Player.Instance.IncreaseHealth(item.HealthValue);
-        Player.Instance.IncreaseHydration(item.HydrationValue);
-        Player.Instance.IncreaseHunger(item.HungerValue);
+        if(item.isConsumable == true)
+        {
+            PlayerStatsUI.Instance.IncreaseHealth(item.HealthValue);
+            PlayerStatsUI.Instance.IncreaseHydration(item.HydrationValue);
+            PlayerStatsUI.Instance.IncreaseHunger(item.HungerValue);
 
-        RemoveItem();
+            RemoveItem();
+        }
     }
 }

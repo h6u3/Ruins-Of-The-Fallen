@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WanderAI : MonoBehaviour {
 
-    // private Animator animator;
+    private Animation animation;
     public float moveSpeed = 3f;
     public float rotSpeed = 100f;
 
@@ -15,7 +15,7 @@ public class WanderAI : MonoBehaviour {
     private bool isWalking = false;
 
     private void Start() {
-        // animator = GetComponent<Animator>();
+        animation = GetComponent<Animation>();
     }
 
     private void Update() {
@@ -50,29 +50,29 @@ public class WanderAI : MonoBehaviour {
         yield return new WaitForSeconds(walkWait);
 
         isWalking = true;
-        // animator.SetBool("IsWalking", true);
+        animation.CrossFade("run");
         yield return new WaitForSeconds(walkTime);
 
         isWalking = false;
-        // animator.SetBool("IsWalking", false);
+        animation.Play("idle");
         yield return new WaitForSeconds(rotateWait);
 
         if (rotateLorR == 1) {
 
             isRotatingRight = true;
-            // animator.SetBool("IsWalking", true);
+            animation.CrossFade("run");
             yield return new WaitForSeconds(rotTime);
             isRotatingRight = false;
-            // animator.SetBool("IsWalking", false);
+            animation.Play("idle");
         }
 
         if (rotateLorR == 2) {
 
             isRotatingLeft = true;
-            // animator.SetBool("IsWalking", true);
+            animation.CrossFade("run");
             yield return new WaitForSeconds(rotTime);
             isRotatingLeft = false;
-            // animator.SetBool("IsWalking", false);
+            animation.Play("idle");
         }
         isWandering = false;
     }

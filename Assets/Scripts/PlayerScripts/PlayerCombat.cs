@@ -2,18 +2,19 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using UnityEngine.SocialPlatforms;
 
 public class PlayerCombat : MonoBehaviour {
 
     public static PlayerCombat Instance { get; set; }
 
-    [SerializeField] private float moveSpeed = 7f;
+    //[SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
-    private float rotateSpeed = 10f;
+    //private float rotateSpeed = 10f;
     private Transform currentTarget;
     private PlayerStats playerStats;
     private TargetUI targetUI;
-    private float coneAngle = 180f;
+    private float coneAngle = 90f;
     private float coneDistance = 5f;
 
     private void Start () {
@@ -26,13 +27,13 @@ public class PlayerCombat : MonoBehaviour {
     }
 
     private void Update() {
-        HandleMovement();
+        //HandleMovement();
 
         CheckInteractCone();
         if (gameInput.checkLeftClick()) {
-        if (currentTarget != null) {
-            Attack();
-        }
+            if (currentTarget != null) {
+                Attack();
+            }
         }
 
         if (gameInput.checkRightClick()) {
@@ -40,65 +41,68 @@ public class PlayerCombat : MonoBehaviour {
         currentTarget = null;
     }
 
-    private void HandleMovement() {
-        float moveDistance = moveSpeed * Time.deltaTime;
+    //private void HandleMovement()
+    //{
+    //    float moveDistance = moveSpeed * Time.deltaTime;
 
-        Vector2 inputVector = gameInput.GetMovementVectorNormalised();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);        
+    //    Vector2 inputVector = gameInput.GetMovementVectorNormalised();
+    //    Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
-        transform.position += moveDir * moveDistance;
+    //    transform.position += moveDir * moveDistance;
 
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
-    }
+    //    transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+    //}
 
     private void CheckInteractCone() {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);
 
-
-    Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);
-
-    foreach (Collider collider in colliders)
-    {
-        if (collider.CompareTag("Attackable"))
+        foreach (Collider collider in colliders)
         {
-            Vector3 direction = collider.transform.position - transform.position;
-            float angle = Vector3.Angle(transform.forward, direction);
-
-            if (angle <= coneAngle * 0.5f)
+            if (collider.CompareTag("Attackable"))
             {
-                currentTarget = collider.transform;
-                targetUI.setCurrentTarget(currentTarget);
-                targetUI.updateHealthBar();
-                break;
+                //Debug.Log("enemyinrange");
+                Vector3 direction = collider.transform.position - transform.position;
+                float angle = Vector3.Angle(transform.forward, direction);
+
+                if (angle <= coneAngle * 0.5f)
+                {
+                    currentTarget = collider.transform;
+                    targetUI.setCurrentTarget(currentTarget);
+                    targetUI.updateHealthBar();
+                    break;
+                }
             }
+        }
+
+        if (currentTarget == null)
+        {
+            currentTarget = null;
+            targetUI.setCurrentTarget(null);
         }
     }
 
-    if (currentTarget == null) {
-        currentTarget = null;
-        targetUI.setCurrentTarget(null);
-    }
-}
-
     private void Attack() {
             
-            if (currentTarget.name == "Enemy") {
-                EnemyController enemyController = currentTarget.GetComponent<EnemyController>();
+        if (currentTarget.name == "Enemy") {
+            EnemyController enemyController = currentTarget.GetComponent<EnemyController>();
 
-                if (enemyController != null) {
-                    float updatedHealth = enemyController.getEnemyHealth() - playerStats.getAttack();
-                    enemyController.setEnemyHealth(updatedHealth);
-                    targetUI.updateHealthBar();
-                }
+            if (enemyController != null) {
+                float updatedHealth = enemyController.getEnemyHealth() - playerStats.getAttack();
+                enemyController.setEnemyHealth(updatedHealth);
+                targetUI.updateHealthBar();
+                enemyController.checkHealth();
             }
+        }
 
-            if (currentTarget.name == "Animal") {
-                AnimalController animalController = currentTarget.GetComponent<AnimalController>();
+        if (currentTarget.name == "Animal") {
+            AnimalController animalController = currentTarget.GetComponent<AnimalController>();
                 
-                if (animalController != null) {
-                    float updatedHealth = animalController.getAnimalHealth() - playerStats.getAttack();
-                    animalController.setAnimalHealth(updatedHealth);
-                    targetUI.updateHealthBar();
-                }
+            if (animalController != null) {
+                float updatedHealth = animalController.getAnimalHealth() - playerStats.getAttack();
+                animalController.setAnimalHealth(updatedHealth);
+                targetUI.updateHealthBar();
+                animalController.checkHealth();
             }
+        }
     }
 }

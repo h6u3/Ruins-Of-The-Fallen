@@ -14,6 +14,8 @@ public class InventoryManager : MonoBehaviour, DataInterface
     public Transform ItemContent;
     public GameObject InventoryItem;
 
+    public ItemPopUp itemPopUp;
+
     private void Awake()
     {
         Instance = this;
@@ -22,6 +24,8 @@ public class InventoryManager : MonoBehaviour, DataInterface
     public void Add(Item item)
     {
         Items.Add(item);
+        itemPopUp.ShowPopUp(item.itemName);
+        ListItems();
     }
 
     public void Remove(Item item)
@@ -79,5 +83,28 @@ public class InventoryManager : MonoBehaviour, DataInterface
     public void SaveData(ref GameData gameData)
     {
         gameData.Items = this.Items;
+    }
+    public void SortItemsAlphaAsc()
+    {
+        Items = SortAlphaAsc();
+        ListItems(); // Refresh the UI after sorting
+    }
+
+    public void SortItemsAlphaDesc()
+    {
+        Items = SortAlphaDesc();
+        ListItems(); // Refresh the UI after sorting
+    }
+
+    public void SortItemsIDAsc()
+    {
+        Items = SortIDAsc();
+        ListItems(); // Refresh the UI after sorting
+    }
+
+    public void SortItemsIDDesc()
+    {
+        Items = SortIDDesc();
+        ListItems(); // Refresh the UI after sorting
     }
 }

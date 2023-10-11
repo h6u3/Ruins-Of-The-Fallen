@@ -17,11 +17,11 @@ public class GameData
 
     public GameData()
     {
-        this.playerPosition = Vector3.zero;
+        this.playerPosition = new Vector3(-575, 30, 165);
 
-        this.Health = 0;
-        this.Hydration = 0;
-        this.Hunger = 0;
+        this.Health = 50;
+        this.Hydration = 50;
+        this.Hunger = 50;
 
         this.Items = new List<Item>();
     }

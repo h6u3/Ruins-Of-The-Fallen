@@ -12,6 +12,7 @@ public class StoneManager : MonoBehaviour
     [SerializeField] private ParticleSystem breakParticlesPrefab;
     private ParticleSystem particles;
     private StoneHealth objectHealth;
+    [SerializeField] private Hotbar hotbar;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +22,7 @@ public class StoneManager : MonoBehaviour
 
     public void TryBreak()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && hotbar.selectedItem == 1)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -36,6 +37,7 @@ public class StoneManager : MonoBehaviour
     }
     public void SpawnSmallerCube(Vector3 position)
     {
+        position += new Vector3(0,1,0);
         Instantiate(smallerCubePrefab, position, Quaternion.identity);
     }
 

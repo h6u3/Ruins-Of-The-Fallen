@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    private float lookRadius = 5f;
+    private float lookRadius = 15f;
     private float attackCooldown = 3.0f;
-    private float EnemyHealth;
+    [SerializeField]private float EnemyHealth;
     private float MaxEnemyHealth;
     private float Attack;
     private string threatLevel;
@@ -16,36 +18,64 @@ public class EnemyController : MonoBehaviour
     private bool canAttack = true;
     Transform target;
     NavMeshAgent agent;
+    [SerializeField]private EnemySpawner spawner;
+    private WanderAI_NavMeshRefactor wanderAi;
+    public Animation anim;
+    private float targetDistance;
+    private bool alive = true;
+    private bool active;
+    [SerializeField] private PlayerManager playerManager;
 
     void Start()
     {
-        target = PlayerManager.instance.player.transform;
+        anim = GetComponent<Animation>();
+        anim.Play("run");
+        playerManager = FindObjectOfType<PlayerManager>();
+        target = playerManager.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        wanderAi = GetComponent<WanderAI_NavMeshRefactor>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        active = spawner.getPlayerInsideArea();
+        if (active)
+        {
+            targetDistance = Vector3.Distance(target.position, this.transform.position);
 
-        if (distance <= lookRadius ) {
-
-            agent.SetDestination(target.position);
-            
-
-            if (distance <= agent.stoppingDistance) {
-                if (canAttack) {
-                AttackTarget();
-                StartCoroutine(AttackCooldown());
+            if (targetDistance <= lookRadius)
+            {
+                if (alive)
+                {
+                    agent.SetDestination(target.position); 
+                    if (targetDistance <= agent.stoppingDistance)
+                    {
+                        if (canAttack)
+                        {
+                            StartCoroutine(AttackTarget());
+                            StartCoroutine(AttackCooldown());
+                        }
+                    }
                 }
-
-                checkEnemyHealth();
             }
         }
+        else
+        {
+            Destroy(enemyObject);
+            spawner.enemyDied();
+        }
+
     }
-    
+
     //Runs the takeDamage function in PlayerManager causing the player to take damage equal to attackValue
-    public void AttackTarget() {
-        PlayerManager.instance.takeDamage(Attack);
+    IEnumerator AttackTarget() {
+        anim.Play("attack1");
+        yield return new WaitForSeconds(1);
+        if (targetDistance <= agent.stoppingDistance)
+        {
+            PlayerManager.instance.takeDamage(Attack);
+        }
+        anim.Play("run");
     }
 
     // Prevents further attacks for the specified cooldown period (attackCooldown)
@@ -88,15 +118,22 @@ public class EnemyController : MonoBehaviour
         return threatLevel;
     }
 
-    private  void checkEnemyHealth() {
+    public void checkHealth()
+    {
         if (EnemyHealth <= 0) {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    private void Die() {
+    private IEnumerator Die()
+    {
+        //Play death animation, drop loot\
+        anim.Play("death1");
+        alive = false;
+        wanderAi.setAlive(false);
+        yield return new WaitForSecondsRealtime(1);
         Destroy(enemyObject);
-        //Play death animation, drop loot
+        spawner.enemyDied();
     }
 
     public void setGameObject(GameObject enemy) {
@@ -115,5 +152,10 @@ public class EnemyController : MonoBehaviour
                 threatLevel = "High";
                 break;
         }
+    }
+
+    internal void setSpawnerParent(EnemySpawner eSpawner)
+    {
+        spawner = eSpawner;
     }
 }
