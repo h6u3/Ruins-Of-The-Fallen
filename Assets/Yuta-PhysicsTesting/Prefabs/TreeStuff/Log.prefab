@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: -7571939415738413697}
   - component: {fileID: 5168441700406758889}
   - component: {fileID: -4287681327664355569}
+  - component: {fileID: -1749501724420722666}
   m_Layer: 0
   m_Name: Log
-  m_TagString: Untagged
+  m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: d373f233760a63f49978e8e6c9210dcb, type: 2}
-  RemoveButton: {fileID: 0}
 --- !u!114 &-4287681327664355569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +187,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: d373f233760a63f49978e8e6c9210dcb, type: 2}
+--- !u!114 &-1749501724420722666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360994071702760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: d373f233760a63f49978e8e6c9210dcb, type: 2}

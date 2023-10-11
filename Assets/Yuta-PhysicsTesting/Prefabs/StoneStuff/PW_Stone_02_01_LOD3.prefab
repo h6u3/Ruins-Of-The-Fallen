@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 401965789962027314}
   - component: {fileID: 8192782166577187210}
   - component: {fileID: 7948072994234794574}
+  - component: {fileID: 8232751041047685999}
   m_Layer: 10
   m_Name: PW_Stone_02_01_LOD3
-  m_TagString: PW - Nature
+  m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 82
@@ -150,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 041d015801aeb6946a93ae2d537e06c6, type: 2}
-  RemoveButton: {fileID: 0}
 --- !u!114 &8192782166577187210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +187,16 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 2
   m_Center: {x: -0.032810718, y: 0.5714405, z: -0.0052998066}
+--- !u!114 &8232751041047685999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298693623287203806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 041d015801aeb6946a93ae2d537e06c6, type: 2}
