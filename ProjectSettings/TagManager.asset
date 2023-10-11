@@ -12,6 +12,8 @@ TagManager:
   - Synty Medium Farm
   - Synty Small Farm
   - CinemachineTarget
+  - Item
+  - Pickupable
   layers:
   - Default
   - TransparentFX

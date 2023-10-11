@@ -14,6 +14,8 @@ public class InventoryManager : MonoBehaviour, DataInterface
     public Transform ItemContent;
     public GameObject InventoryItem;
 
+    public ItemPopUp itemPopUp;
+
     private void Awake()
     {
         Instance = this;
@@ -22,6 +24,7 @@ public class InventoryManager : MonoBehaviour, DataInterface
     public void Add(Item item)
     {
         Items.Add(item);
+        itemPopUp.ShowPopUp(item.itemName);
         ListItems();
     }
 
