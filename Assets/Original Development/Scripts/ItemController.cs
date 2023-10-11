@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,10 +23,13 @@ public class ItemController : MonoBehaviour
 
     public void UseItem()
     {
-        PlayerStatsUI.Instance.IncreaseHealth(item.HealthValue);
-        PlayerStatsUI.Instance.IncreaseHydration(item.HydrationValue);
-        PlayerStatsUI.Instance.IncreaseHunger(item.HungerValue);
+        if(item.isConsumable == true)
+        {
+            PlayerStatsUI.Instance.IncreaseHealth(item.HealthValue);
+            PlayerStatsUI.Instance.IncreaseHydration(item.HydrationValue);
+            PlayerStatsUI.Instance.IncreaseHunger(item.HungerValue);
 
-        RemoveItem();
+            RemoveItem();
+        }
     }
 }

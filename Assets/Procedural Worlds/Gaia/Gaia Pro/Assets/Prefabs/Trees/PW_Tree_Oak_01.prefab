@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2527966080512451233}
   - component: {fileID: 6417841409672241590}
   - component: {fileID: 2781546002154481463}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PW_Tree_Oak_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1267831240470282289}
   - component: {fileID: 1857944550006760888}
   - component: {fileID: 6808642547379414524}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PW_Tree_Oak_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 3496972913919817351}
   - component: {fileID: 7435436483260217006}
   - component: {fileID: 6753969625777082164}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PW_Tree_Oak_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 5084453489314282633}
   - component: {fileID: 5691429616432491085}
   - component: {fileID: 3182430957275080082}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PW_Tree_Oak_01
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 6468620100909724416, guid: 9a26b5323d71c254b9214ccd128480b8,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6468620100909724416, guid: 9a26b5323d71c254b9214ccd128480b8,
         type: 3}
