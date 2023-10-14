@@ -11,6 +11,29 @@ public class PlayerManager : MonoBehaviour {
         instance = this;
     }
 
+    private void Update()
+    {
+        //constant decrease of hydration and hunger. health decreases when either or both have depleted fully.
+        float rate = 5 * Time.deltaTime;
+        float randomNumber = Random.Range(0, 10);
+        if ((playerStats.getHunger()>0) && (randomNumber >= 8.25))
+        {
+            playerStats.changeHunger((int)rate);
+        }
+        if ((playerStats.getHydration() > 0) && (randomNumber <= 1.5))
+        {
+            playerStats.changeHydration((int)rate);
+        }
+        if (playerStats.getHunger() <= 0)
+        {
+            takeDamage(rate);
+        }
+        if (playerStats.getHydration() <= 0)
+        {
+            takeDamage(rate);
+        }
+    }
+
     private void Start() {
         playerStats = PlayerStats.instance;
     }

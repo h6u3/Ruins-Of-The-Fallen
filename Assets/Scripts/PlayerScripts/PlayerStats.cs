@@ -24,8 +24,28 @@ public class PlayerStats : MonoBehaviour {
         Health -= (int) damage;
     }
 
+    public void changeHunger(int value)
+    {
+        player.DecreaseHunger(value);
+    }
+
+    public void changeHydration(int value)
+    {
+        player.DecreaseHydration(value);
+    }
+
     public float getHealth() {
         return Health;
+    }
+
+    public int getHunger()
+    {
+        return player.Hunger;
+    }
+
+    public int getHydration()
+    {
+        return player.Hydration;
     }
 
     public float getAttack() {
