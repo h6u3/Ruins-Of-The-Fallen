@@ -25,7 +25,6 @@ public class CooldownUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Running Update");
        checkUI();
 
         if (timerIsRunning)
@@ -38,7 +37,7 @@ public class CooldownUI : MonoBehaviour
             else
             {
                 timeRemaining = 0;
-                floraManager.cooldown_running = false;
+                floraManager.ResetPlant();
                 timerIsRunning = false;
             }
         }
@@ -67,25 +66,20 @@ public class CooldownUI : MonoBehaviour
     }
 
     private void checkUI() {
-        Debug.Log("ShowUI: "+floraManager.showUI);
         if (floraManager.showUI && floraManager.cooldown_running) {
-            Debug.Log("Running Show");
             Show();
         }
         else {
-            Debug.Log("Running Hide");
             Hide();
         }
     }
 
     public void Show() {
-        Debug.Log("Ran show");
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
     }
 
     public void Hide() {
-        Debug.Log("Ran Hide");
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
     }
