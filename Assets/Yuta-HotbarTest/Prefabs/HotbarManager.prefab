@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6337608326518044600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3244235373253731408}
+  - component: {fileID: 6096678236228184593}
+  m_Layer: 0
+  m_Name: HotbarManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3244235373253731408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337608326518044600}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 496.6561, y: 228.4478, z: -16.893923}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6096678236228184593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337608326518044600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ebeec28471c5b41ad6f0a1f05734e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hotbarList: 000000000100000002000000
+  sword: {fileID: 0}
+  pickaxe: {fileID: 0}
+  axe: {fileID: 0}
+  hotbarImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  swordSprite: {fileID: 21300000, guid: 3e328694e6ceae545a991c31577cddb2, type: 3}
+  pickaxeSprite: {fileID: 21300000, guid: f804b1d7c57b6a145aba862f6d88a50e, type: 3}
+  axeSprite: {fileID: 21300000, guid: 82d09fa9d1de77148992c73dd0b1589b, type: 3}
+  selectedItem: 0
