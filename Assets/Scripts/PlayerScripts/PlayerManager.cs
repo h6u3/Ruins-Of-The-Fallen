@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
@@ -56,6 +57,7 @@ public class PlayerManager : MonoBehaviour {
     public void Die() {
         playerLives = false;
         playerStats.changeHealth(0f); //updates health bar i think
+        player.GetComponent<ThirdPersonController>().PlayerDies();
         Debug.Log("Player Died");
     }
 }

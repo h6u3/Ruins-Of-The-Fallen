@@ -98,6 +98,9 @@ namespace StarterAssets
         private int _animIDPickUp;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDDying;
+
+        [SerializeField] private bool isDead = false;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -157,9 +160,15 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
-            GroundedCheck();
-            Move();
+            if (!isDead)
+            {
+                _animator.SetBool(_animIDDying, isDead);
+                JumpAndGravity();
+                GroundedCheck();
+                Move();
+            }
+
+            
         }
 
         private void LateUpdate()
@@ -175,6 +184,7 @@ namespace StarterAssets
             _animIDPickUp = Animator.StringToHash("PickUp");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDDying = Animator.StringToHash("Dying");
         }
 
         private void GroundedCheck()
@@ -401,6 +411,12 @@ namespace StarterAssets
         public void SaveData(ref GameData gameData)
         {
             gameData.playerPosition = this.transform.position;
+        }
+
+        public void PlayerDies()
+        {
+            isDead = true; 
+            _animator.SetBool(_animIDDying, isDead);
         }
     }
 }
