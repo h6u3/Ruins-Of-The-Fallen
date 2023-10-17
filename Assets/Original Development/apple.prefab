@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 9154254907695782386}
   - component: {fileID: 8563828133797317040}
   - component: {fileID: 1902083184554377244}
-  - component: {fileID: 6059325331438113538}
   - component: {fileID: -3079112255659752864}
+  - component: {fileID: 6059325331438113538}
   m_Layer: 0
   m_Name: apple
   m_TagString: Pickupable
@@ -113,6 +113,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: e6be121cf55607f4e8e108153c6f6759, type: 2}
+--- !u!114 &-3079112255659752864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998400198018249011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: e6be121cf55607f4e8e108153c6f6759, type: 2}
 --- !u!135 &6059325331438113538
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -134,16 +147,3 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3079112255659752864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998400198018249011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: e6be121cf55607f4e8e108153c6f6759, type: 2}
