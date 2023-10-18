@@ -32,12 +32,12 @@ public class CooldownUI : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
+                displayTime(timeRemaining);
             }
             else
             {
                 timeRemaining = 0;
-                floraManager.ResetPlant();
+                floraManager.resetPlant();
                 timerIsRunning = false;
             }
         }
@@ -47,7 +47,7 @@ public class CooldownUI : MonoBehaviour
 
     }
 
-    void DisplayTime(float timeToDisplay)
+    void displayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
@@ -67,19 +67,19 @@ public class CooldownUI : MonoBehaviour
 
     private void checkUI() {
         if (floraManager.showUI && floraManager.cooldown_running) {
-            Show();
+            show();
         }
         else {
-            Hide();
+            hide();
         }
     }
 
-    public void Show() {
+    public void show() {
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
     }
 
-    public void Hide() {
+    public void hide() {
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
     }

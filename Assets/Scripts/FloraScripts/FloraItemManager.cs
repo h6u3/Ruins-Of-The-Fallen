@@ -6,6 +6,7 @@ public class FloraItemManager : MonoBehaviour
 {
     public float health;
    [SerializeField] private FloraManager flora;
+   [SerializeField] private GameObject Item;
     void Start()
     {
         flora = FindObjectOfType<FloraManager>();
@@ -23,9 +24,15 @@ public class FloraItemManager : MonoBehaviour
                 Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-0.5f, 0.5f),
                                                                          Random.Range(0.01f, 0.5f),
                                                                          Random.Range(-0.5f, 0.5f));
-                flora.SpawnFloraItems(spawnPosition);
+                spawnFloraItems(spawnPosition);
             }
             flora.harvested = true;
         }
+    }
+
+    public void spawnFloraItems(Vector3 position)
+    {
+        position += new Vector3(0,1,0);
+        Instantiate(Item, position, Quaternion.identity);
     }
 }

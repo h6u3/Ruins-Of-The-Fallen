@@ -7,10 +7,10 @@ using UnityEngine;
 public class FloraManager : MonoBehaviour {
 
     [SerializeField] private LayerMask mineableObject;
-    [SerializeField] private GameObject Item;
+    
     [SerializeField] private float damage;
     [SerializeField] private float range;
-    [SerializeField] private  FloraItemManager objectHealth;
+    private  FloraItemManager objectHealth;
     public bool cooldown_running = false;
     public bool showUI = false;
     public bool harvested = false;
@@ -19,7 +19,7 @@ public class FloraManager : MonoBehaviour {
     void Update()
     {
         checkLooking();
-        TryHarvest();
+        tryHarvest();
     }
     
     public void checkLooking() {
@@ -35,7 +35,7 @@ public class FloraManager : MonoBehaviour {
         }
     }
 
-    public void TryHarvest()
+    public void tryHarvest()
     {
         if (Input.GetMouseButton(0))
         {
@@ -45,25 +45,15 @@ public class FloraManager : MonoBehaviour {
             if (Physics.Raycast(ray, out hit, range, mineableObject))
             {   
                 if(!cooldown_running) {
-                Debug.Log("Harvested");
                 objectHealth = hit.transform.GetComponent<FloraItemManager>();
                 objectHealth.health -= damage;
                 cooldown_running = true;
-                }
-                else {
-                    Debug.Log("No crops to harvest");
                 }
             }
         }
     }
 
-    public void SpawnFloraItems(Vector3 position)
-    {
-        position += new Vector3(0,1,0);
-        Instantiate(Item, position, Quaternion.identity);
-    }
-
-    public void ResetPlant() {
+    public void resetPlant() {
         cooldown_running = false;
         harvested = false;
         objectHealth.health = 1;
