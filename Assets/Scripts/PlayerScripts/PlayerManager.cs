@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour {
 
     public static PlayerManager instance;
     private PlayerStats playerStats;
+    public GameObject player;
+    bool playerLives = true;
 
     private void Awake() {
         instance = this;
@@ -38,8 +40,6 @@ public class PlayerManager : MonoBehaviour {
     private void Start() {
         playerStats = PlayerStats.instance;
     }
-    public GameObject player;
-    bool playerLives = true;
 
     public void takeDamage(float damageAmount) {
         if (playerLives) {
