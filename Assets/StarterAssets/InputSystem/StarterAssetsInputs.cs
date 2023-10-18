@@ -36,6 +36,8 @@ namespace StarterAssets
 
         public float maxDistance = 5f;
 
+        public AudioClip[] PickUpAudioClips;
+
 #if ENABLE_INPUT_SYSTEM
         private void OnEnable()
         {
@@ -195,6 +197,16 @@ namespace StarterAssets
                     if (itemPickup != null)
                     {
                         itemPickup.Pickup();
+
+                        // Play a random PickUp audio clip
+                        if(PickUpAudioClips.Length > 0)
+                        {
+                            int randomIndex = Random.Range(0, PickUpAudioClips.Length);
+                            AudioClip randomClip = PickUpAudioClips[randomIndex];
+
+                            // Play the audio clip directly
+                            AudioSource.PlayClipAtPoint(randomClip, hit.point);
+                        }
                     }
                 }
             }
