@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour {
     public static PlayerManager instance;
     private PlayerStats playerStats;
     public GameObject player;
+    public CanvasRenderer GameUI;
+    public CanvasRenderer DeathUI;
     bool playerLives = true;
 
     private void Awake() {
