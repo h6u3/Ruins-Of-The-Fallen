@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 1204429536349245827}
   - component: {fileID: 3329690361614682120}
   - component: {fileID: 3996435581288474200}
-  - component: {fileID: 3721002111044451392}
+  - component: {fileID: 1116472880046661511}
+  - component: {fileID: -6730484738243906572}
   m_Layer: 0
   m_Name: sandwich
-  m_TagString: Untagged
+  m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,8 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 5f8ff58391e891d41922f2287dab8926, type: 2}
---- !u!64 &3721002111044451392
-MeshCollider:
+--- !u!65 &1116472880046661511
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,7 +131,19 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: fec741b9da329714ea2dd2119d2e390a, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.72, y: 0.2, z: 0.75}
+  m_Center: {x: 0, y: 0.000601843, z: 0}
+--- !u!114 &-6730484738243906572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641169244884646477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207ca49310ad53409b0985067843fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 5f8ff58391e891d41922f2287dab8926, type: 2}

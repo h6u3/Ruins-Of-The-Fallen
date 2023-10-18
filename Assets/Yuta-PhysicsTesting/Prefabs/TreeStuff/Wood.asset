@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   id: 10
-  itemName: wood
+  itemName: Wood
   HealthValue: 0
   HydrationValue: 0
   HungerValue: 0
   icon: {fileID: 21300000, guid: 57c20e77bb3f04c4bbbf453dc20bc196, type: 3}
+  isConsumable: 0
