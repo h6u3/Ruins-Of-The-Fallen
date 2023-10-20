@@ -6,20 +6,14 @@ using UnityEngine.TestTools;
 
 public class CheckPointTesting
 {
-    // A Test behaves as an ordinary method
     [Test]
-    public void CheckPointTestingSimplePasses()
+    public void AnimalMoveSpeedTestingSimplePasses()
     {
-        // Use the Assert class to test conditions
+        WanderAI wanderAI = new WanderAI();
+
+        float expectedMoveSpeed = 3f;
+        float actualMoveSpeed = wanderAI.moveSpeed;
+        Assert.AreEqual( expectedMoveSpeed, actualMoveSpeed );
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator CheckPointTestingWithEnumeratorPasses()
-    {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
-    }
 }
