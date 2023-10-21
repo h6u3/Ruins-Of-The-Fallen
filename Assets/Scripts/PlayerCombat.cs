@@ -16,6 +16,7 @@ public class PlayerCombat : MonoBehaviour {
     private TargetUI targetUI;
     private float coneAngle = 90f;
     private float coneDistance = 5f;
+    private bool playerDead = false;
 
     private void Start () {
         playerStats = PlayerStats.instance;
@@ -28,17 +29,22 @@ public class PlayerCombat : MonoBehaviour {
 
     private void Update() {
         //HandleMovement();
-
-        CheckInteractCone();
-        if (gameInput.checkLeftClick()) {
-            if (currentTarget != null) {
-                Attack();
+        if (!playerDead)
+        {
+            CheckInteractCone();
+            if (gameInput.checkLeftClick())
+            {
+                if (currentTarget != null)
+                {
+                    Attack();
+                }
             }
-        }
 
-        if (gameInput.checkRightClick()) {
+            if (gameInput.checkRightClick())
+            {
+            }
+            currentTarget = null;
         }
-        currentTarget = null;
     }
 
     //private void HandleMovement()
@@ -52,6 +58,11 @@ public class PlayerCombat : MonoBehaviour {
 
     //    transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
     //}
+
+    public void setPlayerDead(bool isDead)
+    {
+        playerDead = isDead;
+    }
 
     private void CheckInteractCone() {
         Collider[] colliders = Physics.OverlapSphere(transform.position, coneDistance);

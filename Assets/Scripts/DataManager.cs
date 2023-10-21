@@ -11,6 +11,7 @@ public class DataManager : MonoBehaviour
     private List<DataInterface> data;
     private FileManager fileMgr;
     public static DataManager instance { get; private set; }
+    [SerializeField] private PlayerManager playerMgr;
     private bool playerInside = false; //For detecting the user 
 
     //Apply a mesh collider to a game object (e.g. plane) with isTrigger enabled.
@@ -63,8 +64,12 @@ public class DataManager : MonoBehaviour
         this.gameData = new GameData();
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
+        playerMgr.setGamePlayable();
+
+        Debug.Log("PLEASE");
+
         //Load the file contents 
         this.gameData = fileMgr.Load();
 

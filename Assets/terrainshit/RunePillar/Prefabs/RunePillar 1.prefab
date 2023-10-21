@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: save1.game
+  playerMgr: {fileID: 1960717898216140350, guid: df3f9c009dc8e144f9bc01f5fce48f55,
+    type: 3}
 --- !u!114 &6908650935222946767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +252,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RuinPillar: {fileID: 1742858173413876}
   PopUp: {fileID: 194754911232138170, guid: fd7a098bdbe2c134ab154e6279dbc864, type: 3}
+  Camera: {fileID: 0}

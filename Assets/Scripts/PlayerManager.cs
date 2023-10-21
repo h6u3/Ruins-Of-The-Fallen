@@ -9,13 +9,18 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
     private PlayerStats playerStats;
     public GameObject player;
-    public CanvasRenderer GameUI;
-    public CanvasRenderer DeathUI;
-    bool playerLives = true;
+    public Canvas GameUI;
+    public Canvas DeathUI;
+    [SerializeField] private bool playerLives;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    public void setLiving(bool living)
+    {
+        playerLives = living;
     }
 
     private void Update()
@@ -39,6 +44,7 @@ public class PlayerManager : MonoBehaviour
         {
             takeDamage(rate);
         }
+        Debug.Log("LIVING: " + playerLives);
     }
 
     private void Start()
@@ -65,9 +71,43 @@ public class PlayerManager : MonoBehaviour
 
     public void Die()
     {
-        playerLives = false;
-        playerStats.changeHealth(0f); //updates health bar i think
-        player.GetComponent<ThirdPersonController>().PlayerDies();
-        Debug.Log("Player Died");
+        if (playerLives == true)
+        {
+            playerLives = false;
+            playerStats.changeHealth(0f); //updates health bar i think
+            player.GetComponent<ThirdPersonController>().PlayerDies();
+            if (GameUI.gameObject.activeSelf == true)
+            {
+                GameUI.gameObject.SetActive(!GameUI.gameObject.activeSelf);
+            }
+            if (DeathUI.gameObject.activeSelf == false)
+            {
+                DeathUI.gameObject.SetActive(!DeathUI.gameObject.activeSelf);
+                player.GetComponent<StarterAssetsInputs>().SetCursorState(false);
+                player.GetComponent<PlayerCombat>().setPlayerDead(true);
+            }
+            Debug.Log("Player Died");
+        }
+    }
+
+    public void setGamePlayable()
+    {
+        Debug.Log("?????");
+        Debug.Log("TEST LIVING: " + playerLives);
+        if (playerLives == false)
+        {
+            Debug.Log("HOW");
+            playerLives = true;
+            Debug.Log("test");
+            GameUI.gameObject.SetActive(true);
+            Debug.Log("GameUI State:");
+            Debug.Log(GameUI.gameObject.activeSelf);
+            DeathUI.gameObject.SetActive(false);
+            Debug.Log("DeathUI State:" + DeathUI.gameObject.activeSelf);
+            player.GetComponent<StarterAssetsInputs>().SetCursorState(true);
+            player.GetComponent<PlayerCombat>().setPlayerDead(false);
+            player.GetComponent<ThirdPersonController>().PlayerLives();
+
+        }
     }
 }
