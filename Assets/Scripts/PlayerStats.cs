@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour {
 
     private void Update()
     {
-        //Health = (float)player.Health;
+        Health = (float)player.Health;
     }
 
     public void changeHealth(float damage) {
