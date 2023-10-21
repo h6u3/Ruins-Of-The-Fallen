@@ -44,7 +44,6 @@ public class PlayerManager : MonoBehaviour
         {
             takeDamage(rate);
         }
-        Debug.Log("LIVING: " + playerLives);
     }
 
     private void Start()
@@ -90,24 +89,4 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void setGamePlayable()
-    {
-        Debug.Log("?????");
-        Debug.Log("TEST LIVING: " + playerLives);
-        if (playerLives == false)
-        {
-            Debug.Log("HOW");
-            playerLives = true;
-            Debug.Log("test");
-            GameUI.gameObject.SetActive(true);
-            Debug.Log("GameUI State:");
-            Debug.Log(GameUI.gameObject.activeSelf);
-            DeathUI.gameObject.SetActive(false);
-            Debug.Log("DeathUI State:" + DeathUI.gameObject.activeSelf);
-            player.GetComponent<StarterAssetsInputs>().SetCursorState(true);
-            player.GetComponent<PlayerCombat>().setPlayerDead(false);
-            player.GetComponent<ThirdPersonController>().PlayerLives();
-
-        }
-    }
 }

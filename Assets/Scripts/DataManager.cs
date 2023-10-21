@@ -64,12 +64,8 @@ public class DataManager : MonoBehaviour
         this.gameData = new GameData();
     }
 
-    public void LoadGame()
+    private void LoadGame()
     {
-        playerMgr.setGamePlayable();
-
-        Debug.Log("PLEASE");
-
         //Load the file contents 
         this.gameData = fileMgr.Load();
 
