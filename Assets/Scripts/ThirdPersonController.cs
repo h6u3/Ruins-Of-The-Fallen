@@ -100,7 +100,7 @@ namespace StarterAssets
         private int _animIDMotionSpeed;
         private int _animIDDying;
 
-        [SerializeField] private bool isDead = false;
+        public bool isDead = false;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -416,6 +416,12 @@ namespace StarterAssets
         public void PlayerDies()
         {
             isDead = true; 
+            _animator.SetBool(_animIDDying, isDead);
+        }
+
+        public void PlayerLives()
+        {
+            isDead = false;
             _animator.SetBool(_animIDDying, isDead);
         }
     }
