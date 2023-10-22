@@ -11,13 +11,17 @@ public class SavingMechanic
     {
         // Create a test file to load
         string fullPath = Path.Combine(testDirPath, testFileName);
-        File.WriteAllText(fullPath, "{ \"Health\": 1000 }"); // Set the Health property in the test data
+        File.WriteAllText(fullPath, "{ \"Health\": 4939 }"); // Set the Health property in the test data
+        File.WriteAllText(fullPath, "{ \"Hydration\": 234 }"); // Set the Hydration property in the test data
+        File.WriteAllText(fullPath, "{ \"Hunger\": 10 }"); // Set the Hunger property in the test data
         FileManager fileManager = new FileManager(testDirPath, testFileName);
         GameData loadedData = fileManager.Load();
 
         //Assertions
         Assert.IsNotNull(loadedData);
-        Assert.AreEqual(1000, loadedData.Health); // Check the loaded Health property
+        Assert.AreEqual(4939, loadedData.Health); 
+        Assert.AreEqual(234, loadedData.Health); 
+        Assert.AreEqual(10, loadedData.Health); 
 
         // Clean up after the test
         File.Delete(fullPath);
