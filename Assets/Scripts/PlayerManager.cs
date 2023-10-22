@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using StarterAssets;
 using UnityEngine;
 
@@ -7,15 +8,20 @@ public class PlayerManager : MonoBehaviour
 {
 
     public static PlayerManager instance;
-    private PlayerStats playerStats;
+    public PlayerStats playerStats;
     public GameObject player;
     public Canvas GameUI;
     public Canvas DeathUI;
-    [SerializeField] private bool playerLives;
+    public int rate = 1;
+    private bool playerLives = true;
+    private int timing = 0;
+    private int hungerTimer = 0;
+    private int hydrationTimer = 0;
 
     private void Awake()
     {
         instance = this;
+        rate = 1;
     }
 
     public void setLiving(bool living)
@@ -23,24 +29,28 @@ public class PlayerManager : MonoBehaviour
         playerLives = living;
     }
 
-    private void Update()
+    public void FixedUpdate()
     {
+        timing += 1;
+        timing %= 200;
+        hungerTimer += 1;
+        hungerTimer %= 500;
+        hydrationTimer += 1;
+        hydrationTimer %= 400;
         //constant decrease of hydration and hunger. health decreases when either or both have depleted fully.
-        float rate = 5 * Time.deltaTime;
-        float randomNumber = Random.Range(0, 10);
-        if ((playerStats.getHunger() > 0) && (randomNumber >= 8.25))
+        if (playerStats.getHunger() > 0 && hungerTimer == 0)
         {
-            playerStats.changeHunger((int)rate);
+            playerStats.changeHunger(rate);
         }
-        if ((playerStats.getHydration() > 0) && (randomNumber <= 1.5))
+        if (playerStats.getHydration() > 0 && hydrationTimer == 0)
         {
-            playerStats.changeHydration((int)rate);
+            playerStats.changeHydration(rate);
         }
-        if (playerStats.getHunger() <= 0)
+        if (playerStats.getHunger() <= 0 && timing == 0)
         {
             takeDamage(rate);
         }
-        if (playerStats.getHydration() <= 0)
+        if (playerStats.getHydration() <= 0 && timing == 0)
         {
             takeDamage(rate);
         }
@@ -49,9 +59,10 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         playerStats = PlayerStats.instance;
+        rate = 1;
     }
 
-    public void takeDamage(float damageAmount)
+    public void takeDamage(int damageAmount)
     {
         if (playerLives)
         {
@@ -66,6 +77,10 @@ public class PlayerManager : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            playerLives = true;
+        }
     }
 
     public void Die()
@@ -73,7 +88,7 @@ public class PlayerManager : MonoBehaviour
         if (playerLives == true)
         {
             playerLives = false;
-            playerStats.changeHealth(0f); //updates health bar i think
+            playerStats.changeHealth(0); //updates health bar i think
             player.GetComponent<ThirdPersonController>().PlayerDies();
             if (GameUI.gameObject.activeSelf == true)
             {
