@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5271146327306603918}
   - component: {fileID: 2387974944888394625}
   - component: {fileID: 5653659667967146451}
+  - component: {fileID: 7526771998749367546}
   m_Layer: 10
   m_Name: PW_Stone_Granite_03
   m_TagString: PW - Nature
@@ -211,6 +212,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   stone: {fileID: 0}
+--- !u!114 &7526771998749367546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908502226180160634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2648e592ae3beeb4aaadb94a329fcf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 041d015801aeb6946a93ae2d537e06c6, type: 2}
 --- !u!1 &3961341107779972937
 GameObject:
   m_ObjectHideFlags: 0

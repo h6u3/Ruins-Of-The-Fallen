@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AnimalSpawner : MonoBehaviour {
     enum ThreatLevel {
@@ -16,6 +17,7 @@ public class AnimalSpawner : MonoBehaviour {
     private int aId;
     private int concurrentAnimals;
     private bool playerInsideArea;
+    [SerializeField] private GameObject animalDrop;
 
     private void Start()
     {
@@ -118,5 +120,11 @@ public class AnimalSpawner : MonoBehaviour {
     public void animalDied()
     {
         concurrentAnimals--;
+    }
+
+    public void spawnDrops(Vector3 spawnPosition)
+    {
+        spawnPosition += new Vector3(0, 1, 0);
+        Instantiate(animalDrop, spawnPosition, Quaternion.identity);
     }
 }

@@ -48,6 +48,8 @@ MonoBehaviour:
   animalPrefab: {fileID: 2806176413448291229, guid: 3edcf70af3303894482eb673a57b1198,
     type: 3}
   spawnPoint: {fileID: 2217697529420910327}
+  animalDrop: {fileID: 8510843343325319368, guid: 5b7687b6560d59940a35f782bfc0a3e4,
+    type: 3}
 --- !u!135 &4720748910686950803
 SphereCollider:
   m_ObjectHideFlags: 0

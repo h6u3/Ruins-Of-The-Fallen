@@ -452,12 +452,40 @@ MonoBehaviour:
     sessionPlaybackState: 1
     m_terrainsFoldedOut: 0
     m_serializedExternalAction: 
+  - m_description: 'Spawning - '
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_1_1-20230915 - 154111
+    - Terrain_0_1-20230915 - 154111
+    - Terrain_1_0-20230915 - 154111
+    - Terrain_0_0-20230915 - 154111
+    m_operationDateTime: 10/23/2023 3:31:34 PM
+    scriptableObjectAssetGUID: d5418b4cee6e7364fa78e13c8a9c06b2
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: 'Spawning - '
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_1_1-20230915 - 154111
+    - Terrain_0_1-20230915 - 154111
+    - Terrain_1_0-20230915 - 154111
+    - Terrain_0_0-20230915 - 154111
+    m_operationDateTime: 10/23/2023 3:32:41 PM
+    scriptableObjectAssetGUID: 2bb32fa61de0df746a4992fd7206996c
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
   m_terrainMinMaxCache:
   - guid: 4202bb0faf9612143a4a943f44005598
     isWorldmap: 0
     recalculate: 0
     min: 0
-    max: 127.84009
+    max: 128.93874
   - guid: 1df2052324a1e6041b4c2d06fd9f9c95
     isWorldmap: 0
     recalculate: 0
