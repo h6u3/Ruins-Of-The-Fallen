@@ -12,5 +12,5 @@ public class Item : ScriptableObject
     public int HydrationValue;
     public int HungerValue;
     public Sprite icon;
-    public Boolean isConsumable;
+    public bool isConsumable;
 }

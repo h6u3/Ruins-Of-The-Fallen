@@ -7,9 +7,9 @@ public class PlayerStatsUI : MonoBehaviour, DataInterface
 {
     public static PlayerStatsUI Instance;
 
-    public int Health = 1;
-    public int Hydration = 1;
-    public int Hunger = 1;
+    public int Health;
+    public int Hydration;
+    public int Hunger;
 
     public Text HealthText;
     public Text HydrationText;
