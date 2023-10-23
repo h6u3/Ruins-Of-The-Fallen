@@ -12,7 +12,6 @@ public class HealthTesting
     private PlayerStatsUI playerStatsUI;
     private Text testText;
 
-
     [SetUp]
     public void Setup()
     {
