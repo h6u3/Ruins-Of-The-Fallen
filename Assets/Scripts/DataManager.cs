@@ -67,7 +67,14 @@ public class DataManager : MonoBehaviour
     private void LoadGame()
     {
         //Load the file contents 
-        this.gameData = fileMgr.Load();
+        if (PlayerPrefs.GetInt("new") == 0)
+        {
+            this.gameData = fileMgr.Load();
+        }
+        else
+        {
+            this.gameData = null;
+        }
 
         //Start a new game if the data does not exist
         if (this.gameData == null)

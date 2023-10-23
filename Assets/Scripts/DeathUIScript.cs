@@ -12,7 +12,7 @@ public class DeathUIScript : MonoBehaviour
 
     public void QuitButton()
     {
-        Application.Quit(); //temp until i make a main menu
+        SceneManager.LoadScene("MainMenu"); //temp until i make a main menu
         //open main menu
     }
 }
