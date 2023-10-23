@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9de69c10503099478027ca9108c7f26, type: 3}
   m_Name: Cherry
   m_EditorClassIdentifier: 
-  id: 2
+  id: 3
   itemName: Cherry
   HealthValue: 0
   HydrationValue: 0
   HungerValue: 0
   icon: {fileID: 21300000, guid: c1e0afed929fe5f48bcf33bbd0f069d6, type: 3}
+  isConsumable: 1

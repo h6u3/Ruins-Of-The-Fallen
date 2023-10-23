@@ -18,3 +18,4 @@ MonoBehaviour:
   HydrationValue: 20
   HungerValue: 5
   icon: {fileID: 21300000, guid: ee6448c4a14715c4181bc2b5af8f5ec0, type: 3}
+  isConsumable: 1

@@ -12,6 +12,9 @@ TagManager:
   - Synty Medium Farm
   - Synty Small Farm
   - CinemachineTarget
+  - Item
+  - Pickupable
+  - Test
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - PW_Object_Small
   - PW_Object_Medium
   - PW_Object_Large
-  - 
+  - Flora
   - 
   - 
   - 
