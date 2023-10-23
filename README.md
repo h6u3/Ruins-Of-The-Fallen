@@ -17,3 +17,5 @@ Ruins of the Fallen is an RPG Game made by the following Members:
   - Scenes/MainTerrain
 5. Make sure these are checked and leave other settings as default.
 6. Now click "Build"
+7. You will be prompted to select a Folder. This is where the project will be built into.
+8. Finally, the game can be run by Opening the executable file inside the selectable folder when the build completes.
