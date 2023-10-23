@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 23000010765629750}
   - component: {fileID: 64000011284429378}
   - component: {fileID: 8066469494362205113}
-  m_Layer: 0
+  - component: {fileID: 9043089279126250609}
+  m_Layer: 12
   m_Name: Corn_Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,3 +123,16 @@ MonoBehaviour:
   health: 1
   flora: {fileID: 0}
   Item: {fileID: 1000012087161104, guid: 8490d29919917de4ca0c5297d93090d7, type: 3}
+--- !u!114 &9043089279126250609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012235373026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e300b443d94cb4996a76ff1ae6530b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 5636ce520274da843a8147c1f2372e75, type: 2}

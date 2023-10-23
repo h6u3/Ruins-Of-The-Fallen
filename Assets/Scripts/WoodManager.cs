@@ -5,7 +5,7 @@ using UnityEngine;
 public class WoodManager : MonoBehaviour
 {
     [SerializeField] private ParticleSystem breakParticlesPrefab;
-    [SerializeField] private LayerMask mineableObject;
+    public LayerMask mineableObject;
     [SerializeField] private float damage;
     [SerializeField] private float range;
     [SerializeField] public GameObject treePrefab;

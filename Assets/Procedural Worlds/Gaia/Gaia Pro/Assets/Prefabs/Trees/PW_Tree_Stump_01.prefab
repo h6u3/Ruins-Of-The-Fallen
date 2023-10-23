@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2373161678376968291}
   - component: {fileID: 4750590713841532222}
   - component: {fileID: -291231214125513656}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Stump_01
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 1819932778635408499}
   - component: {fileID: 8554263402171917753}
   - component: {fileID: 1348421507903633403}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Stump_01_01_LOD2
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 1900496502568426120}
   - component: {fileID: 6506431031577426171}
   - component: {fileID: 6081816717100505638}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Stump_01_01_LOD0
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 1294651165839893112}
   - component: {fileID: 3524869653781642391}
   - component: {fileID: 1830810428745695993}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Stump_01_01_LOD1
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 4501472744172790271}
   - component: {fileID: 8646815085802074208}
   - component: {fileID: 6052863953613120485}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PW_Tree_Stump_01_01_LOD3
   m_TagString: PW - Nature
   m_Icon: {fileID: 0}

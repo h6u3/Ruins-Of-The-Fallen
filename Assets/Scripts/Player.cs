@@ -65,7 +65,7 @@ public class PlayerStatsUI : MonoBehaviour, DataInterface
         Hunger -= value;
         if (Hunger < 0)
             Hunger = 0;
-        HungerText.text = $"Hunger: {Hunger}";
+        HungerText.text = $"Hunger: {Hunger}%";
     }
 
     public void LoadData(GameData gameData)
