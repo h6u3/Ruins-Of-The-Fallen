@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
     public static PlayerStats instance;
-    private PlayerStatsUI player;
-    private float Health = 50f;
+    public PlayerStatsUI player;
     private float Attack = 5f;
 
     private void Awake() {
@@ -14,14 +13,8 @@ public class PlayerStats : MonoBehaviour {
         instance = this;
     }
 
-    private void Update()
-    {
-        Health = (float)player.Health;
-    }
-
-    public void changeHealth(float damage) {
-        player.DecreaseHealth((int)damage);
-        Health -= (int) damage;
+    public void changeHealth(int damage) {
+        player.DecreaseHealth(damage);
     }
 
     public void changeHunger(int value)
@@ -35,7 +28,7 @@ public class PlayerStats : MonoBehaviour {
     }
 
     public float getHealth() {
-        return Health;
+        return player.Health;
     }
 
     public int getHunger()
@@ -51,4 +44,5 @@ public class PlayerStats : MonoBehaviour {
     public float getAttack() {
         return Attack;
     }
+
 }
