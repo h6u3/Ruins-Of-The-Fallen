@@ -98,6 +98,7 @@ public class DataManager : MonoBehaviour
         }
         //Save into the Json file
         fileMgr.save(gameData);
+        PlayerPrefs.SetInt("new", 0); //0 for false to new game
     }
 
     private List<DataInterface> FindAllData()
