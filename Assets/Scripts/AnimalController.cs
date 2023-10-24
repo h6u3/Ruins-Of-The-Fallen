@@ -4,6 +4,7 @@ using System.Collections.Generic;
 //using Gaia;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class AnimalController : MonoBehaviour {
     private float lookRadius = 10f;
@@ -81,6 +82,15 @@ public class AnimalController : MonoBehaviour {
     private void Die() {
         Destroy(animalObject);
         //Play death animation, drop loot
+
+        int numberOfDrops = Random.Range(1, 3); // Random number between 1 and 3 (inclusive)
+        for (int i = 0; i < numberOfDrops; i++)
+        {
+            Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-0.5f, 0.5f),  //x
+                                                                     Random.Range(0.01f, 0.5f),  //y
+                                                                     Random.Range(-0.5f, 0.5f)); //z
+            spawner.spawnDrops(spawnPosition); // Spawn a smaller cube with random deviation
+        }
         spawner.animalDied();
     }
 

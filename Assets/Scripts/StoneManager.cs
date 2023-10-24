@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoneManager : MonoBehaviour
 {
     
-    [SerializeField] private LayerMask mineableObject;
+    public LayerMask mineableObject;
     [SerializeField] private float damage;
     [SerializeField] private float range;
     [SerializeField] private GameObject smallerCubePrefab;

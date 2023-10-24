@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 2569891317708823515}
   - component: {fileID: 8270430537323165328}
   - component: {fileID: 5020209937508531063}
+  - component: {fileID: -2268661843671934889}
   m_Layer: 10
   m_Name: PW_Stone_06
   m_TagString: PW - Nature
@@ -377,3 +378,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   stone: {fileID: 0}
+--- !u!114 &-2268661843671934889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598590827841283236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2648e592ae3beeb4aaadb94a329fcf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 041d015801aeb6946a93ae2d537e06c6, type: 2}

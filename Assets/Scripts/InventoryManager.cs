@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEditor.Progress;
 using System.Linq;
 
 public class InventoryManager : MonoBehaviour, DataInterface

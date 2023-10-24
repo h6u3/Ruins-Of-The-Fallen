@@ -100,7 +100,7 @@ namespace StarterAssets
         private int _animIDMotionSpeed;
         private int _animIDDying;
 
-        [SerializeField] private bool isDead = false;
+        public bool isDead = false;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -404,7 +404,7 @@ namespace StarterAssets
         //Load the player location from previous save 
         public void LoadData(GameData gameData)
         {
-            this.transform.position = gameData.playerPosition;
+            this.transform.position = gameData.playerPosition + (new Vector3(0, 2, 0));
         }
 
         //Save the player location into the save file
@@ -416,6 +416,12 @@ namespace StarterAssets
         public void PlayerDies()
         {
             isDead = true; 
+            _animator.SetBool(_animIDDying, isDead);
+        }
+
+        public void PlayerLives()
+        {
+            isDead = false;
             _animator.SetBool(_animIDDying, isDead);
         }
     }

@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     private float attackCooldown = 3.0f;
     [SerializeField]private float EnemyHealth;
     private float MaxEnemyHealth;
-    private float Attack;
+    private int Attack;
     private string threatLevel;
     private float enemyID;
     private GameObject enemyObject;
@@ -90,7 +90,7 @@ public class EnemyController : MonoBehaviour
     }
 
     public void setAttack (float attackValue) {
-        Attack = attackValue;
+        Attack = (int)attackValue;
     }
 
     public void setEnemyHealth (float EnemyHealthValue) {
