@@ -7,11 +7,37 @@ using System.Linq;
 public class InventoryManager : MonoBehaviour, DataInterface
 {
     public static InventoryManager Instance;
-    private List<Item> Items = new List<Item>();
 
+    [SerializeField] private List<Item> Items = new List<Item>();
     [SerializeField] private Transform itemContentTransform;
     [SerializeField] private GameObject inventoryItemPrefab;
+
     [SerializeField] private ItemPopUp itemPopUp;
+
+    public List<Item> GetItems()
+    {
+        return Items;
+    }
+
+    public Transform GetItemContentTransform()
+    {
+        return itemContentTransform;
+    }
+
+    public void SetItemContentTransform(Transform transform)
+    {
+        itemContentTransform = transform;
+    }
+
+    public GameObject GetInventoryItemPrefab()
+    {
+        return inventoryItemPrefab;
+    }
+
+    public void SetInventoryItemPrefab(GameObject gameObj)
+    {
+        inventoryItemPrefab = gameObj;
+    }
 
     private void Awake()
     {
@@ -64,6 +90,7 @@ public class InventoryManager : MonoBehaviour, DataInterface
 
                 var itemNameText = obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                 var itemIconImage = obj.transform.GetChild(1).GetComponent<Image>();
+                Debug.Log(itemNameText + " " + itemIconImage);
 
                 if (itemNameText != null && itemIconImage != null)
                 {
