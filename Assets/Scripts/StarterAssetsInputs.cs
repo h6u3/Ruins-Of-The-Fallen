@@ -32,6 +32,8 @@ namespace StarterAssets
         public CanvasRenderer InventoryToToggle;
         public CanvasRenderer reticle;
 
+        public Canvas PauseMenu;
+
         private bool isInventoryOpen = false;
 
         public float maxDistance = 5f;
@@ -43,6 +45,7 @@ namespace StarterAssets
         {
             // Initialize the InputActions
             toggleInputsAction = new InputAction("toggleInputs", binding: "<Keyboard>/tab");
+            toggleInputsAction.AddBinding("<Keyboard>/a"); //test binding rn
             toggleInputsAction.performed += ToggleInputsPerformed;
             toggleInputsAction.Enable();
         }
@@ -156,6 +159,27 @@ namespace StarterAssets
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (isInventoryOpen)
+                {
+                    // Set Y position of Content Object to ZERO using a method
+                    SetPosition(ContentObject);
+
+                    // Toggle the canvas visibility
+                    InventoryToToggle.gameObject.SetActive(!InventoryToToggle.gameObject.activeSelf);
+                    reticle.gameObject.SetActive(!reticle.gameObject.activeSelf);
+
+                    // Update the inventory open state
+                    isInventoryOpen = InventoryToToggle.gameObject.activeSelf;
+                }
+                else
+                {
+                    // Toggle the canvas visibility
+                    PauseMenu.gameObject.SetActive(!PauseMenu.gameObject.activeSelf);
+                }
+            }
+
             // Check if the Tab key is pressed
             if (Input.GetKeyDown(KeyCode.Tab))
             {
