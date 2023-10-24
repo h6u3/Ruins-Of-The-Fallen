@@ -17,8 +17,8 @@ public class PauseMenuScript : MonoBehaviour
         keyboard = InputSystem.GetDevice<Keyboard>();
         keyState1 = new KeyboardState();
         keyState2 = new KeyboardState();
-        keyState1.Press(Key.A);
-        keyState2.Release(Key.A);
+        keyState1.Press(Key.Escape);
+        keyState2.Release(Key.Escape);
         InputSystem.QueueStateEvent(keyboard, keyState1);
         InputSystem.QueueStateEvent(keyboard, keyState2);
         gameObject.SetActive(false);

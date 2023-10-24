@@ -45,7 +45,7 @@ namespace StarterAssets
         {
             // Initialize the InputActions
             toggleInputsAction = new InputAction("toggleInputs", binding: "<Keyboard>/tab");
-            toggleInputsAction.AddBinding("<Keyboard>/a"); //test binding rn
+            toggleInputsAction.AddBinding("<Keyboard>/escape"); //test binding rn
             toggleInputsAction.performed += ToggleInputsPerformed;
             toggleInputsAction.Enable();
         }
@@ -159,7 +159,7 @@ namespace StarterAssets
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (isInventoryOpen)
                 {
