@@ -7,102 +7,135 @@ using System.Linq;
 public class InventoryManager : MonoBehaviour, DataInterface
 {
     public static InventoryManager Instance;
-    public List<Item> Items = new List<Item>();
+    private List<Item> Items = new List<Item>();
 
-    public Transform ItemContent;
-    public GameObject InventoryItem;
-
-    public ItemPopUp itemPopUp;
+    [SerializeField] private Transform itemContentTransform;
+    [SerializeField] private GameObject inventoryItemPrefab;
+    [SerializeField] private ItemPopUp itemPopUp;
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            // Another instance already exists, so destroy this one to ensure it's a singleton.
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
     }
 
-    public void Add(Item item)
+    /// Add an item to the inventory and update the UI and also show which item was picked up
+    public void AddItem(Item item)
     {
-        Items.Add(item);
-        itemPopUp.ShowPopUp(item.itemName);
-        ListItems();
-    }
-
-    public void Remove(Item item)
-    {
-        Items.Remove(item);
-    }
-
-    public void ListItems()
-    {
-        foreach (Transform item in ItemContent)
+        if (item != null)
         {
-            Destroy(item.gameObject);
-        }
-
-        foreach (var item in Items)
-        {
-            GameObject obj = Instantiate(InventoryItem, ItemContent);
-
-            var itemName = obj.transform.GetChild(0);
-            var itemIcon = obj.transform.GetChild(1);
-
-            itemName.GetComponent<TextMeshProUGUI>().text = item.itemName;
-            itemIcon.GetComponent<Image>().sprite = item.icon;
-
-            obj.GetComponent<ItemController>().item = item;
-
+            Items.Add(item);
+            if (itemPopUp != null)
+            {
+                itemPopUp.ShowPopUp(item.itemName);
+            }
+            UpdateUI();
         }
     }
 
-    public List<Item> SortAlphaAsc()
+    /// Remove an item from the inventory.
+    public void RemoveItem(Item item)
     {
-        return Items.OrderBy(Item => Item.itemName).ToList();
+        if (item != null)
+        {
+            Items.Remove(item);
+        }
     }
 
-    public List<Item> SortAlphaDesc()
+    /// Clear the UI and list items in the inventory.
+    public void UpdateUI()
     {
-        return Items.OrderBy(Item => Item.itemName).Reverse().ToList();
+        if (itemContentTransform != null && inventoryItemPrefab != null)
+        {
+            foreach (Transform item in itemContentTransform)
+            {
+                Destroy(item.gameObject);
+            }
+
+            foreach (var item in Items)
+            {
+                GameObject obj = Instantiate(inventoryItemPrefab, itemContentTransform);
+
+                var itemNameText = obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                var itemIconImage = obj.transform.GetChild(1).GetComponent<Image>();
+
+                if (itemNameText != null && itemIconImage != null)
+                {
+                    itemNameText.text = item.itemName;
+                    itemIconImage.sprite = item.icon;
+
+                    var itemController = obj.GetComponent<ItemController>();
+                    if (itemController != null)
+                    {
+                        itemController.item = item;
+                    }
+                }
+            }
+        }
     }
 
-    public List<Item> SortIDAsc()
+    /// Sort items in ascending order based on item name.
+    public List<Item> SortItemsAlphaAsc()
     {
-        return Items.OrderBy(Item => Item.id).ToList();
+        return Items.OrderBy(item => item.itemName).ToList();
     }
 
-    public List<Item> SortIDDesc()
+    /// Sort items in descending order based on item name.
+    public List<Item> SortItemsAlphaDesc()
     {
-        return Items.OrderBy(Item => Item.id).Reverse().ToList();
+        return Items.OrderByDescending(item => item.itemName).ToList();
+    }
+
+    /// Sort items in ascending order based on item ID.
+    public List<Item> SortItemsIDAsc()
+    {
+        return Items.OrderBy(item => item.id).ToList();
+    }
+
+    /// Sort items in descending order based on item ID.
+    public List<Item> SortItemsIDDesc()
+    {
+        return Items.OrderByDescending(item => item.id).ToList();
     }
 
     public void LoadData(GameData gameData)
     {
         this.Items = gameData.Items;
+        UpdateUI();
     }
 
     public void SaveData(ref GameData gameData)
     {
         gameData.Items = this.Items;
     }
-    public void SortItemsAlphaAsc()
+
+    public void SortItemsAlphaAscending()
     {
-        Items = SortAlphaAsc();
-        ListItems(); // Refresh the UI after sorting
+        Items = SortItemsAlphaAsc();
+        UpdateUI();
     }
 
-    public void SortItemsAlphaDesc()
+    public void SortItemsAlphaDescending()
     {
-        Items = SortAlphaDesc();
-        ListItems(); // Refresh the UI after sorting
+        Items = SortItemsAlphaDesc();
+        UpdateUI();
     }
 
-    public void SortItemsIDAsc()
+    public void SortItemsIDAscending()
     {
-        Items = SortIDAsc();
-        ListItems(); // Refresh the UI after sorting
+        Items = SortItemsIDAsc();
+        UpdateUI();
     }
 
-    public void SortItemsIDDesc()
+    public void SortItemsIDDescending()
     {
-        Items = SortIDDesc();
-        ListItems(); // Refresh the UI after sorting
+        Items = SortItemsIDDesc();
+        UpdateUI();
     }
 }

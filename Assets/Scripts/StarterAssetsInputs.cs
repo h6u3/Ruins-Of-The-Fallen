@@ -195,7 +195,7 @@ namespace StarterAssets
 
                 if (isInventoryOpen)
                 {
-                    InventoryManager.Instance.ListItems();
+                    InventoryManager.Instance.UpdateUI();
                 }
 
             }

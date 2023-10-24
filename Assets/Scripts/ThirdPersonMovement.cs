@@ -105,7 +105,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 cameraPan.m_YAxis.m_MaxSpeed = 0f;
                 cameraPan.m_XAxis.m_MaxSpeed = 0f;
 
-                InventoryManager.Instance.ListItems();
+                InventoryManager.Instance.UpdateUI();
 
             }
             else
