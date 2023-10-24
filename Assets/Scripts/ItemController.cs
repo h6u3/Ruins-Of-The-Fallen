@@ -3,7 +3,7 @@ using UnityEngine;
 public class ItemController : MonoBehaviour
 {
     public Item item;
-    
+
     public void RemoveItem()
     {
         InventoryManager.Instance.RemoveItem(item);
