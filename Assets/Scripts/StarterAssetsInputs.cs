@@ -223,7 +223,7 @@ namespace StarterAssets
                         itemPickup.Pickup();
 
                         // Play a random PickUp audio clip
-                        if(PickUpAudioClips.Length > 0)
+                        if (PickUpAudioClips.Length > 0)
                         {
                             int randomIndex = Random.Range(0, PickUpAudioClips.Length);
                             AudioClip randomClip = PickUpAudioClips[randomIndex];

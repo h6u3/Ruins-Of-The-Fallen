@@ -1818,6 +1818,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1eb972fc430a22479f426d97028a8c7, type: 3}
+--- !u!82 &1909327563 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3553601705757678728, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4555381320572302870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1940594360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2641,9 +2647,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
         type: 3}
+      propertyPath: Source
+      value: 
+      objectReference: {fileID: 1909327563}
+    - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
+        type: 3}
       propertyPath: reticle
       value: 
       objectReference: {fileID: 988706051}
+    - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
+        type: 3}
+      propertyPath: maxDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
         type: 3}
       propertyPath: ContentObject
@@ -2654,6 +2670,26 @@ PrefabInstance:
       propertyPath: InventoryToToggle
       value: 
       objectReference: {fileID: 2663262338944613230}
+    - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
+        type: 3}
+      propertyPath: PickUpAudioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
+        type: 3}
+      propertyPath: PickUpAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: af8d43bba39b08441bd182001fb20d01, type: 3}
+    - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
+        type: 3}
+      propertyPath: PickUpAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: e9e0df37d647f8f41944e2722b02f48d, type: 3}
+    - target: {fileID: 2255987657738215023, guid: 9014e98cf25bb1d4ba891f1b1947203c,
+        type: 3}
+      propertyPath: PickUpAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: bcab1f3d2888bc542b23be36fc80e286, type: 3}
     - target: {fileID: 4053661187754278771, guid: 9014e98cf25bb1d4ba891f1b1947203c,
         type: 3}
       propertyPath: LockCameraPosition
@@ -3059,6 +3095,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 942033798671100894, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.34117648
+      objectReference: {fileID: 0}
     - target: {fileID: 1405521752975093363, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3159,6 +3200,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3553601705757678728, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553601705757678728, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: af8d43bba39b08441bd182001fb20d01, type: 3}
     - target: {fileID: 3775349997819740140, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3234,6 +3285,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 836536976}
+    - target: {fileID: 6710356215370238219, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7863895384898451701, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
         type: 3}
       propertyPath: m_text
@@ -3754,6 +3810,33 @@ PrefabInstance:
     - target: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
         type: 3}
       propertyPath: ItemContent
+      value: 
+      objectReference: {fileID: 7988958183706849811}
+    - target: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
+        type: 3}
+      propertyPath: InventoryItem
+      value: 
+      objectReference: {fileID: 9195769065782199246, guid: c0b05bf31294b9d4fb765ef899cb4447,
+        type: 3}
+    - target: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
+        type: 3}
+      propertyPath: Items.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
+        type: 3}
+      propertyPath: inventoryItemPrefab
+      value: 
+      objectReference: {fileID: 9195769065782199246, guid: c0b05bf31294b9d4fb765ef899cb4447,
+        type: 3}
+    - target: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
+        type: 3}
+      propertyPath: itemPanelController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
+        type: 3}
+      propertyPath: itemContentTransform
       value: 
       objectReference: {fileID: 7988958183706849811}
     - target: {fileID: 4151910625897099806, guid: ad7f875d23d6330438787bc8a36170c4,
