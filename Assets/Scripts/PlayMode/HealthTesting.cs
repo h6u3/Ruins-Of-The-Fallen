@@ -124,7 +124,7 @@ public class HealthTesting
 
         // Assert
         Assert.AreEqual(35, playerStatsUI.Hunger);
-        Assert.AreEqual("Hunger: 35", testText.text);
+        Assert.AreEqual("Hunger: 35%", testText.text);
     }
 
 }
