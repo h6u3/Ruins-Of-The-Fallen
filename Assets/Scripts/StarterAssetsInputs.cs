@@ -32,6 +32,8 @@ namespace StarterAssets
         public CanvasRenderer InventoryToToggle;
         public CanvasRenderer reticle;
 
+        public Canvas PauseMenu;
+
         private bool isInventoryOpen = false;
 
         public float maxDistance = 5f;
@@ -43,6 +45,7 @@ namespace StarterAssets
         {
             // Initialize the InputActions
             toggleInputsAction = new InputAction("toggleInputs", binding: "<Keyboard>/tab");
+            toggleInputsAction.AddBinding("<Keyboard>/escape"); //test binding rn
             toggleInputsAction.performed += ToggleInputsPerformed;
             toggleInputsAction.Enable();
         }
@@ -149,13 +152,34 @@ namespace StarterAssets
             }
         }
 
-        private void SetCursorState(bool newState)
+        public void SetCursorState(bool newState)
         {
             Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
         }
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isInventoryOpen)
+                {
+                    // Set Y position of Content Object to ZERO using a method
+                    SetPosition(ContentObject);
+
+                    // Toggle the canvas visibility
+                    InventoryToToggle.gameObject.SetActive(!InventoryToToggle.gameObject.activeSelf);
+                    reticle.gameObject.SetActive(!reticle.gameObject.activeSelf);
+
+                    // Update the inventory open state
+                    isInventoryOpen = InventoryToToggle.gameObject.activeSelf;
+                }
+                else
+                {
+                    // Toggle the canvas visibility
+                    PauseMenu.gameObject.SetActive(!PauseMenu.gameObject.activeSelf);
+                }
+            }
+
             // Check if the Tab key is pressed
             if (Input.GetKeyDown(KeyCode.Tab))
             {
@@ -199,7 +223,7 @@ namespace StarterAssets
                         itemPickup.Pickup();
 
                         // Play a random PickUp audio clip
-                        if(PickUpAudioClips.Length > 0)
+                        if (PickUpAudioClips.Length > 0)
                         {
                             int randomIndex = Random.Range(0, PickUpAudioClips.Length);
                             AudioClip randomClip = PickUpAudioClips[randomIndex];

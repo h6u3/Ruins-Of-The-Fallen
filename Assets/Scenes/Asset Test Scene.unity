@@ -1520,18 +1520,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1897278930}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1621887858 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4133132309573779436, guid: fed3a57b14f0cc84fbb6f19c3f3c41a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 4555381320572302870}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68c67bc1b603474e9fea6ddca5044a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1668829923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3845,7 +3833,7 @@ PrefabInstance:
         type: 3}
       propertyPath: itemPanelController
       value: 
-      objectReference: {fileID: 1621887858}
+      objectReference: {fileID: 0}
     - target: {fileID: 2727645092067227375, guid: ad7f875d23d6330438787bc8a36170c4,
         type: 3}
       propertyPath: itemContentTransform

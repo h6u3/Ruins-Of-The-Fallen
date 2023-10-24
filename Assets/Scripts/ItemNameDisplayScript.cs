@@ -12,7 +12,7 @@ public class ItemNameDisplayScript : MonoBehaviour
 
     private void Awake()
     {
-        if(_instance != null && _instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
         }
@@ -22,12 +22,14 @@ public class ItemNameDisplayScript : MonoBehaviour
         }
     }
 
+    // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = true;
         gameObject.SetActive(false);
     }
 
+    // Update is called once per frame
     void Update()
     {
         transform.position = Input.mousePosition;
