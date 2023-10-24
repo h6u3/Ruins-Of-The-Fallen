@@ -73,7 +73,7 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            this.gameData = null;
+            this.gameData = new GameData();
         }
 
         //Start a new game if the data does not exist

@@ -404,13 +404,14 @@ namespace StarterAssets
         //Load the player location from previous save 
         public void LoadData(GameData gameData)
         {
-            this.transform.position = gameData.playerPosition + (new Vector3(0, 2, 0));
+            gameObject.transform.position = gameData.playerPosition + (new Vector3(0, 2, 0));
+            Debug.Log(gameObject.transform.position);
         }
 
         //Save the player location into the save file
         public void SaveData(ref GameData gameData)
         {
-            gameData.playerPosition = this.transform.position;
+            gameData.playerPosition = gameObject.transform.position;
         }
 
         public void PlayerDies()
