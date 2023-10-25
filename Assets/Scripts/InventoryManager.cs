@@ -108,25 +108,25 @@ public class InventoryManager : MonoBehaviour, DataInterface
     }
 
     /// Sort items in ascending order based on item name.
-    public List<Item> SortItemsAlphaAsc()
+    private List<Item> SortItemsAlphaAsc()
     {
         return Items.OrderBy(item => item.itemName).ToList();
     }
 
     /// Sort items in descending order based on item name.
-    public List<Item> SortItemsAlphaDesc()
+    private List<Item> SortItemsAlphaDesc()
     {
         return Items.OrderByDescending(item => item.itemName).ToList();
     }
 
     /// Sort items in ascending order based on item ID.
-    public List<Item> SortItemsIDAsc()
+    private List<Item> SortItemsIDAsc()
     {
         return Items.OrderBy(item => item.id).ToList();
     }
 
     /// Sort items in descending order based on item ID.
-    public List<Item> SortItemsIDDesc()
+    private List<Item> SortItemsIDDesc()
     {
         return Items.OrderByDescending(item => item.id).ToList();
     }
